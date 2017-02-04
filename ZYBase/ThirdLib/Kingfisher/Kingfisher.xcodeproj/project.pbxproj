@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		182FFF771CC9ACBA004B728D /* NSButton+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSButton+Kingfisher.swift"; path = "Sources/NSButton+Kingfisher.swift"; sourceTree = "<group>"; };
+		3575BBB01E45CE91009AFDF3 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = "/Users/mzywx/Desktop/ZYBaseDemo/ZYBase/ThirdLib/Kingfisher/build/Debug-iphoneos/Kingfisher.framework"; sourceTree = "<absolute>"; };
 		4B2B8E491D70128200FC4749 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4B6313F31D766BEF0078E017 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		4B77423E1D87E08A0077024E /* Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		D10945F41C526B6C001408EB /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/String+MD5.swift"; sourceTree = "<group>"; };
 		D10945F51C526B6C001408EB /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Sources/ThreadHelper.swift; sourceTree = "<group>"; };
 		D10945F61C526B6C001408EB /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
-		D1ED2D351AD2D09F00CFC3EB /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = "/Users/mzywx/Desktop/ZYBaseDemo/ZYBase/ThirdLib/Kingfisher/build/Debug-iphoneos/Kingfisher.framework"; sourceTree = "<absolute>"; };
 		D9638B9F1C7DBA660046523D /* ImagePrefetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +166,7 @@
 			);
 			name = "Kingfisher-iOS";
 			productName = Kingfisher;
-			productReference = D1ED2D351AD2D09F00CFC3EB /* Kingfisher.framework */;
+			productReference = 3575BBB01E45CE91009AFDF3 /* Kingfisher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
