@@ -1,10 +1,13 @@
 //
 //  LBXScanViewController.swift
-//  swiftScan
+//  swiftScan https://github.com/MxABC/swiftScan
 //
 //  Created by lbxia on 15/12/8.
 //  Copyright © 2015年 xialibing. All rights reserved.
 //
+
+import UIKit
+import Foundation
 import AVFoundation
 
 open class LBXResultVC: BaseVC {
@@ -20,6 +23,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
    open var qRScanView: LBXScanView?
     
    open var resultClass : AnyClass?
+
     
     //启动区域识别功能
    open var isOpenInterestRect = false
@@ -133,9 +137,9 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         }
         
         let result:LBXScanResult = arrayResult[0]
-        
         skipToResultVC(result: result)
-               
+
+//        showMsg(title: result.strBarCodeType, message: result.strScanned)
     }
     ///扫码结果跳转，如果继承本控制器，可以重写此方法，以实现跳转
     open func skipToResultVC(result:LBXScanResult)  {
@@ -150,7 +154,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
             showMsg(title: result.strBarCodeType, message: result.strScanned)
         }
     }
-    
+
     override open func viewWillDisappear(_ animated: Bool) {
         
         NSObject.cancelPreviousPerformRequests(withTarget: self)

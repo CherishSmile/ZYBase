@@ -1,11 +1,12 @@
 //
 //  LBXPermissions.swift
-//  swiftScan
+//  swiftScan https://github.com/MxABC/swiftScan
 //
 //  Created by xialibing on 15/12/15.
 //  Copyright © 2015年 xialibing. All rights reserved.
 //
 
+import UIKit
 import AVFoundation
 import Photos
 import AssetsLibrary

@@ -1,11 +1,13 @@
 //
 //  LBXScanViewStyle.swift
-//  swiftScan
+//  swiftScan https://github.com/MxABC/swiftScan
 //
 //  Created by xialibing on 15/12/8.
 //  Copyright © 2015年 xialibing. All rights reserved.
 //
+
 import UIKit
+
 ///扫码区域动画效果
 public enum LBXScanViewAnimationStyle
 {
@@ -86,10 +88,7 @@ public struct LBXScanViewStyle
     
     
     // MARK: -非识别区域颜色,默认 RGBA (0,0,0,0.5)，范围（0--1）
-    public var red_notRecoginitonArea:CGFloat    = 0.0
-    public var green_notRecoginitonArea:CGFloat  = 0.0
-    public var blue_notRecoginitonArea:CGFloat   = 0.0
-    public var alpa_notRecoginitonArea:CGFloat   = 0.5
+    public var color_NotRecoginitonArea:UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5);
     
     public init()
     {

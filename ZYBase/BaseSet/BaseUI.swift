@@ -122,16 +122,13 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
     case .AliPayScan:
         scanStyle.centerUpOffset = getPointByPixelH(120)
         scanStyle.xScanRetangleOffset = getPointByPixelH(60)
-        scanStyle.red_notRecoginitonArea = 0.4
-        scanStyle.green_notRecoginitonArea = 0.4
-        scanStyle.blue_notRecoginitonArea = 0.4
-        scanStyle.alpa_notRecoginitonArea = 0.4
         
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
         scanStyle.photoframeLineW = 2.0;
         scanStyle.photoframeAngleW = 16;
         scanStyle.photoframeAngleH = 16;
-        
+        scanStyle.color_NotRecoginitonArea = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.4)
+
         scanStyle.isNeedShowRetangle = false;
         
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.NetGrid;
