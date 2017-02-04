@@ -69,7 +69,7 @@
 		EE235FBF1C5785DC00C08960 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		EE235FC61C5785E200C08960 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
 		EE6898CA1DA7B3A100D47F33 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		EEBCC9D819CC627D0083B827 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEBCC9D819CC627D0083B827 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = "/Users/mzywx/Desktop/ZYBaseDemo/ZYBase/ThirdLib/Snapkit/build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<absolute>"; };
 		EECDB3641AC0C95C006BBC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EECDB3661AC0C95C006BBC11 /* SnapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
 		EECDB3691AC0C95C006BBC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,16 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				EECDB35D1AC0C95C006BBC11 /* Source */,
-				DDC9FD961981B4DD009612C7 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		DDC9FD961981B4DD009612C7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EEBCC9D819CC627D0083B827 /* SnapKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		EE235F581C57858700C08960 /* Extensions */ = {
@@ -274,7 +265,7 @@
 				Base,
 			);
 			mainGroup = DDC9FD8C1981B4DD009612C7;
-			productRefGroup = DDC9FD961981B4DD009612C7 /* Products */;
+			productRefGroup = DDC9FD8C1981B4DD009612C7;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ZYBase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

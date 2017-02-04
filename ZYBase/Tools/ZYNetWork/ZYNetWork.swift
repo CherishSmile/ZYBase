@@ -52,7 +52,7 @@ open class ZYNetWork: NSObject {
     ///   - success: 成功回调
     ///   - fail: 失败回调
     open class func ZYGET(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure)  {
-        Alamofire.request(netModel.url!, method: .get, parameters: netModel.paramers, encoding: JSONEncoding.default, headers: netModel.headers).responseJSON { (response) in
+        Alamofire.request(netModel.url!, method: .get, parameters: netModel.paramers, encoding: URLEncoding.default, headers: netModel.headers).responseJSON { (response) in
             if  response.result.isSuccess {
                 if let value = response.result.value {
                     let json = JSON(value)
@@ -76,7 +76,7 @@ open class ZYNetWork: NSObject {
     ///   - success: 成功回调
     ///   - fail: 失败回调
     open class func ZYPOST(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
-        Alamofire.request(netModel.url!, method: .post, parameters: netModel.paramers, encoding: JSONEncoding.default,headers: netModel.headers).responseJSON { (response) in
+        Alamofire.request(netModel.url!, method: .post, parameters: netModel.paramers, encoding: URLEncoding.default,headers: netModel.headers).responseJSON { (response) in
             if  response.result.isSuccess {
                 if let value = response.result.value {
                     let json = JSON(value)

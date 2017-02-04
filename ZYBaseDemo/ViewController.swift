@@ -7,7 +7,6 @@
 //
 
 import ZYBase
-import WebKit
 class ViewController: BaseVC {
 
     override func viewDidLoad() {

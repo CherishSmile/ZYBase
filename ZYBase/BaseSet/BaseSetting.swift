@@ -227,7 +227,7 @@ public func getWindow() -> UIWindow {
 ///   - timeformat: 时间格式 “yyyy-MM-dd HH:mm”
 /// - Returns: 格式化后的时间
 public func getTimeDate(_ time:TimeInterval ,_ timeformat:String) -> String {
-    let date = Date(timeIntervalSince1970: time)
+    let date = Date(timeIntervalSince1970: time/1000)
     let formatter = DateFormatter()
     formatter.dateFormat=timeformat
     let strTime = formatter.string(from: date)
@@ -384,4 +384,5 @@ public func isAllowLoaction() -> Bool{
 public func requestUrl(_ hostUrl:String,_ uri:String) -> String {
     return hostUrl+uri
 }
+
 

@@ -44,7 +44,7 @@
 		4CE2724E1AF88FB500F1D59A /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		4CFCFE2D1D56D31700A76388 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		4CFCFE381D56E8D900A76388 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
-		F8111E3319A95C8B0040E7D1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8111E3319A95C8B0040E7D1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "/Users/mzywx/Desktop/ZYBaseDemo/ZYBase/ThirdLib/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<absolute>"; };
 		F8111E3719A95C8B0040E7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8111E3819A95C8B0040E7D1 /* Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
 		F897FF4019AA800700AB5182 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
@@ -102,20 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				F8111E3519A95C8B0040E7D1 /* Source */,
-				F8111E3419A95C8B0040E7D1 /* Products */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
 			tabWidth = 4;
 			usesTabs = 0;
-		};
-		F8111E3419A95C8B0040E7D1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F8111E3319A95C8B0040E7D1 /* Alamofire.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
 		};
 		F8111E3519A95C8B0040E7D1 /* Source */ = {
 			isa = PBXGroup;
@@ -194,7 +185,7 @@
 				en,
 			);
 			mainGroup = F8111E2919A95C8B0040E7D1;
-			productRefGroup = F8111E3419A95C8B0040E7D1 /* Products */;
+			productRefGroup = F8111E2919A95C8B0040E7D1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
