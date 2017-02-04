@@ -221,16 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				350C0FE41E447584004D6306 /* AppDelegate.swift */,
-				350C0FC71E446B8A004D6306 /* ViewController.swift */,
-				350C0FC81E446B8A004D6306 /* ViewController1.swift */,
-				350C0FC91E446B8A004D6306 /* ViewController2.swift */,
-				350C0FCA1E446B8A004D6306 /* ViewController4.swift */,
-				350C0FCB1E446B8A004D6306 /* ViewController3.swift */,
-				350C0FCC1E446B8A004D6306 /* MyQRCodeViewController.swift */,
-				350C0FCD1E446B8A004D6306 /* ResultViewController.swift */,
-				350C0FD51E446B9E004D6306 /* TestModel.swift */,
-				350C0FD61E446B9E004D6306 /* TestAlertView.swift */,
-				350C0FD71E446B9E004D6306 /* TestTableViewCell.swift */,
+				3575BB741E45830C009AFDF3 /* Controllers */,
+				3575BB771E45831A009AFDF3 /* Models */,
+				3575BB781E458323009AFDF3 /* Views */,
 				3534A7071E2F4AC30001A3B2 /* Main.storyboard */,
 				3534A70A1E2F4AC30001A3B2 /* Assets.xcassets */,
 				3534A70C1E2F4AC30001A3B2 /* LaunchScreen.storyboard */,
@@ -393,6 +386,37 @@
 				3534A8EE1E2F6D770001A3B2 /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3575BB741E45830C009AFDF3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				350C0FC71E446B8A004D6306 /* ViewController.swift */,
+				350C0FC81E446B8A004D6306 /* ViewController1.swift */,
+				350C0FC91E446B8A004D6306 /* ViewController2.swift */,
+				350C0FCA1E446B8A004D6306 /* ViewController4.swift */,
+				350C0FCB1E446B8A004D6306 /* ViewController3.swift */,
+				350C0FCC1E446B8A004D6306 /* MyQRCodeViewController.swift */,
+				350C0FCD1E446B8A004D6306 /* ResultViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3575BB771E45831A009AFDF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				350C0FD51E446B9E004D6306 /* TestModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3575BB781E458323009AFDF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350C0FD61E446B9E004D6306 /* TestAlertView.swift */,
+				350C0FD71E446B9E004D6306 /* TestTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
