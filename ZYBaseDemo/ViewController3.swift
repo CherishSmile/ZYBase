@@ -7,14 +7,16 @@
 //
 
 import ZYBase
-class ViewController3: BaseVC {
+class ViewController3: BaseWebVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        shouldShowProgress = true
+        isUseWebPageTitle = true
+        urlString = "https://www.baidu.com"
         // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

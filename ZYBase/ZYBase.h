@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char ZYBaseVersionString[];
 #import <ZYBase/ZYBadgeView.h>
 #import <ZYBase/ZYFileManager.h>
 #import <ZYBase/TTTAttributedLabel.h>
+#import <ZYBase/UINavigationController+SGProgress.h>
 /*
  若直接把文件拖入swift工程，则需创建桥接头文件并导入以下oc头文件
      #import "ZYAlertView.h"

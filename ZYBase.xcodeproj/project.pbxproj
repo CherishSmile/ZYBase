@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3574AE651E56FEEC00B281C8 /* BaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */; };
+		3574AE671E56FFB400B281C8 /* RootWebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3574AE661E56FFB400B281C8 /* RootWebManager.swift */; };
 		357553261E4817C5005A0755 /* ZYBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553241E4817C5005A0755 /* ZYBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		357553B61E481804005A0755 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532D1E481803005A0755 /* BaseAlertView.swift */; };
 		357553B71E481804005A0755 /* BaseSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532E1E481803005A0755 /* BaseSetting.swift */; };
@@ -26,13 +28,13 @@
 		357554111E481804005A0755 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3575539E1E481804005A0755 /* TTTAttributedLabel.m */; };
 		357554121E481804005A0755 /* ZYBadgeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553A11E481804005A0755 /* ZYBadgeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		357554131E481804005A0755 /* ZYBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357553A21E481804005A0755 /* ZYBadgeView.m */; };
-		357554141E481804005A0755 /* UIWindow+ZYUitily.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553A41E481804005A0755 /* UIWindow+ZYUitily.h */; };
+		357554141E481804005A0755 /* UIWindow+ZYUitily.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553A41E481804005A0755 /* UIWindow+ZYUitily.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		357554151E481804005A0755 /* UIWindow+ZYUitily.m in Sources */ = {isa = PBXBuildFile; fileRef = 357553A51E481804005A0755 /* UIWindow+ZYUitily.m */; };
-		357554161E481804005A0755 /* ZYAlertVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553A61E481804005A0755 /* ZYAlertVC.h */; };
+		357554161E481804005A0755 /* ZYAlertVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553A61E481804005A0755 /* ZYAlertVC.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		357554171E481804005A0755 /* ZYAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 357553A71E481804005A0755 /* ZYAlertVC.m */; };
 		357554181E481804005A0755 /* ZYAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553A81E481804005A0755 /* ZYAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		357554191E481804005A0755 /* ZYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357553A91E481804005A0755 /* ZYAlertView.m */; };
-		3575541A1E481804005A0755 /* ZYAlertWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553AA1E481804005A0755 /* ZYAlertWindow.h */; };
+		3575541A1E481804005A0755 /* ZYAlertWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553AA1E481804005A0755 /* ZYAlertWindow.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3575541B1E481804005A0755 /* ZYAlertWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 357553AB1E481804005A0755 /* ZYAlertWindow.m */; };
 		3575541C1E481804005A0755 /* ZYFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553AD1E481804005A0755 /* ZYFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3575541D1E481804005A0755 /* ZYFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 357553AE1E481804005A0755 /* ZYFileManager.m */; };
@@ -63,6 +65,8 @@
 		3575547A1E481AFC005A0755 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3575542A1E481804005A0755 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3575547D1E481B01005A0755 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357554271E481804005A0755 /* Kingfisher.framework */; };
 		3575547E1E481B01005A0755 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357554271E481804005A0755 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3577B0271E5D92B10029594D /* UINavigationController+SGProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3577B0281E5D92B10029594D /* UINavigationController+SGProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +139,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebVC.swift; sourceTree = "<group>"; };
+		3574AE661E56FFB400B281C8 /* RootWebManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWebManager.swift; sourceTree = "<group>"; };
 		357553211E4817C5005A0755 /* ZYBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZYBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		357553241E4817C5005A0755 /* ZYBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBase.h; sourceTree = "<group>"; };
 		357553251E4817C5005A0755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,6 +197,8 @@
 		3575545D1E48194A005A0755 /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		3575545E1E48194A005A0755 /* ViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
 		3575545F1E48194A005A0755 /* ZYBaseDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZYBaseDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SGProgress.h"; sourceTree = "<group>"; };
+		3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SGProgress.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +260,8 @@
 				3575532E1E481803005A0755 /* BaseSetting.swift */,
 				3575532F1E481803005A0755 /* BaseUI.swift */,
 				357553301E481803005A0755 /* BaseVC.swift */,
+				3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */,
+				3574AE661E56FFB400B281C8 /* RootWebManager.swift */,
 				357553311E481803005A0755 /* RootManager.swift */,
 			);
 			path = BaseSet;
@@ -353,6 +363,7 @@
 		3575539F1E481804005A0755 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3577B0241E5D92B10029594D /* UINavigationController+SGProgress */,
 				357553A01E481804005A0755 /* ZYBadgeView */,
 				357553A31E481804005A0755 /* ZYCustomeAlert */,
 				357553AC1E481804005A0755 /* ZYFileManager */,
@@ -469,6 +480,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		3577B0241E5D92B10029594D /* UINavigationController+SGProgress */ = {
+			isa = PBXGroup;
+			children = (
+				3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */,
+				3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */,
+			);
+			path = "UINavigationController+SGProgress";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -480,6 +500,7 @@
 				357553261E4817C5005A0755 /* ZYBase.h in Headers */,
 				3575541C1E481804005A0755 /* ZYFileManager.h in Headers */,
 				357554181E481804005A0755 /* ZYAlertView.h in Headers */,
+				3577B0271E5D92B10029594D /* UINavigationController+SGProgress.h in Headers */,
 				357554101E481804005A0755 /* TTTAttributedLabel.h in Headers */,
 				3575541A1E481804005A0755 /* ZYAlertWindow.h in Headers */,
 				357554141E481804005A0755 /* UIWindow+ZYUitily.h in Headers */,
@@ -643,6 +664,7 @@
 				357553E71E481804005A0755 /* LBXScanLineAnimation.swift in Sources */,
 				3575541B1E481804005A0755 /* ZYAlertWindow.m in Sources */,
 				357553EB1E481804005A0755 /* LBXScanViewStyle.swift in Sources */,
+				3574AE651E56FEEC00B281C8 /* BaseWebVC.swift in Sources */,
 				357553BA1E481804005A0755 /* RootManager.swift in Sources */,
 				357553B61E481804005A0755 /* BaseAlertView.swift in Sources */,
 				357553B71E481804005A0755 /* BaseSetting.swift in Sources */,
@@ -650,8 +672,10 @@
 				357553B91E481804005A0755 /* BaseVC.swift in Sources */,
 				357554151E481804005A0755 /* UIWindow+ZYUitily.m in Sources */,
 				357554211E481804005A0755 /* UITableViewCell+AutoCellHeight.swift in Sources */,
+				3574AE671E56FFB400B281C8 /* RootWebManager.swift in Sources */,
 				357553E61E481804005A0755 /* LBXPermissions.swift in Sources */,
 				357553EA1E481804005A0755 /* LBXScanViewController.swift in Sources */,
+				3577B0281E5D92B10029594D /* UINavigationController+SGProgress.m in Sources */,
 				357553E81E481804005A0755 /* LBXScanNetAnimation.swift in Sources */,
 				357554111E481804005A0755 /* TTTAttributedLabel.m in Sources */,
 				3575540F1E481804005A0755 /* SwiftyJSON.swift in Sources */,

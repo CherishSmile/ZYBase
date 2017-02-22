@@ -13,6 +13,8 @@ open class BaseVC: UIViewController {
 
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.backgroundColor = .white
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +27,11 @@ open class BaseVC: UIViewController {
         self.view.endEditing(true)
     }
 
+    
+    deinit {
+        printLog("\(self.classForCoder) deinit");
+    }
+    
     /*
     // MARK: - Navigation
 

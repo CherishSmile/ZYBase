@@ -10,7 +10,7 @@ import UIKit
 public enum  ScanStyle:Int {
     case AliPayScan
     case WechatScan
-    case barCodeScan
+    case BarCodeScan
 }
 public enum  CodeStyle:Int {
     case AztecCodeGenerator
@@ -128,11 +128,8 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.photoframeAngleW = 16;
         scanStyle.photoframeAngleH = 16;
         scanStyle.color_NotRecoginitonArea = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.4)
-
         scanStyle.isNeedShowRetangle = false;
-        
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.NetGrid;
-//        scanStyle.animationImage = UIImage(named: "Frameworks/ZYBase.framework/CodeScan.bundle/qrcode_scan_full_net")
         scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_full_net", ofType: "png")!)
         
     case .WechatScan:
@@ -144,10 +141,8 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.isNeedShowRetangle = false;
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.LineMove;
         scanStyle.colorAngle = UIColor(red: 0.0/255, green: 200.0/255.0, blue: 20.0/255.0, alpha: 1.0)
-        
-//        scanStyle.animationImage = UIImage(named: "Frameworks/ZYBase.framework/CodeScan.bundle/qrcode_Scan_weixin_Line")
         scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_Scan_weixin_Line", ofType: "png")!)
-    case .barCodeScan:
+    case .BarCodeScan:
         scanStyle.centerUpOffset = getPointByPixelH(88);
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
         scanStyle.photoframeLineW = 4;
@@ -155,7 +150,6 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.photoframeAngleH = 16;
         scanStyle.isNeedShowRetangle = false;
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.LineStill;
-//        scanStyle.animationImage = UIImage(named: "Frameworks/ZYBase.framework/CodeScan.bundle/qrcode_scan_light_green")
         scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_light_green", ofType: "png")!)
         //非正方形
         //设置矩形宽高比
