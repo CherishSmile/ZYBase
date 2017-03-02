@@ -1,22 +1,32 @@
 //
-//  ViewController3.swift
-//  BaseDemo
+//  BadgeNumberVC.swift
+//  ZYBase
 //
-//  Created by Mzywx on 2016/12/21.
-//  Copyright © 2016年 Mzywx. All rights reserved.
+//  Created by Mzywx on 2017/2/24.
+//  Copyright © 2017年 Mzywx. All rights reserved.
 //
 
-import ZYBase
-class ViewController3: BaseWebVC {
+import UIKit
+
+class BadgeNumberVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        isShowProgress = true
-        isUseWebTitle = true
-        webloadHtml(urlStr: "http://www.baidu.com")
+
         // Do any additional setup after loading the view.
+        
+        let view = creatImageView(nil, self.view) { (make) in
+            make.centerX.centerY.equalToSuperview()
+            make.width.equalTo(SCREEN_WIDTH-200)
+            make.height.equalTo(100)
+        }
+        view.backgroundColor = .orange
+        
+        creatBadgeView(view, .topRight, "20")
+        creatBadgeView(view, .bottomLeft, "4000")
+
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

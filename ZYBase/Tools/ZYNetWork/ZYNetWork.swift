@@ -45,12 +45,14 @@ public typealias SuccessClosure = (Bool,Any) -> ()
 public typealias FailClosure = (Bool,Any) -> ()
 open class ZYNetWork: NSObject {
     
-    /// GET请求
-    ///
-    /// - Parameters:
-    ///   - netModel: 参数配置Model
-    ///   - success: 成功回调
-    ///   - fail: 失败回调
+
+    /**
+     *  GET请求
+     * - Parameters:
+     *   - netModel: 参数配置Model
+     *   - success: 成功回调
+     *   - fail: 失败回调
+     */
     open class func ZYGET(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure)  {
         Alamofire.request(netModel.url!, method: .get, parameters: netModel.paramers, encoding: URLEncoding.default, headers: netModel.headers).responseJSON { (response) in
             if  response.result.isSuccess {
@@ -69,12 +71,14 @@ open class ZYNetWork: NSObject {
         }
     }
     
-    /// POST请求
-    ///
-    /// - Parameters:
-    ///   - netModel: 参数配置Model
-    ///   - success: 成功回调
-    ///   - fail: 失败回调
+
+    /**
+     *  POST请求
+     * - Parameters:
+     *   - netModel: 参数配置Model
+     *   - success: 成功回调
+     *   - fail: 失败回调
+     */
     open class func ZYPOST(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
         Alamofire.request(netModel.url!, method: .post, parameters: netModel.paramers, encoding: URLEncoding.default,headers: netModel.headers).responseJSON { (response) in
             if  response.result.isSuccess {
@@ -93,12 +97,14 @@ open class ZYNetWork: NSObject {
         }
     }
     
-    /// 上传单个文件
-    ///
-    /// - Parameters:
-    ///   - uploadModel: 上传参数配置model
-    ///   - success: 成功回调
-    ///   - fail: 失败回调
+  
+    /**
+     *  上传单个文件
+     * - Parameters:
+     *   - uploadModel: 上传参数配置model
+     *   - success: 成功回调
+     *   - fail: 失败回调
+     */
     open class func ZYUPLOAD(netModel:ZYNetModel,uploadModel:ZYUploadModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
         Alamofire.upload((uploadModel.dataArr?.first)!, to: netModel.url).responseJSON { (response) in
             if  response.result.isSuccess {
@@ -117,13 +123,15 @@ open class ZYNetWork: NSObject {
         }
     }
     
-    /// 上传多个文件
-    ///
-    /// - Parameters:
-    ///   - netModel: 参数配置model
-    ///   - uploadModel: 上传配置model
-    ///   - success: 成功回调
-    ///   - fail: 失败回调
+ 
+    /**
+     *  上传多个文件
+     * - Parameters:
+     *   - netModel: 参数配置model
+     *   - uploadModel: 上传配置model
+     *   - success: 成功回调
+     *   - fail: 失败回调
+     */
     open class func ZYMULUPLOAD(netModel:ZYNetModel,uploadModel:ZYUploadModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
         Alamofire.upload(multipartFormData: { multipartFormData in
             for data in uploadModel.dataArr!{

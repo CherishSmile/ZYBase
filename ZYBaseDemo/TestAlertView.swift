@@ -13,7 +13,7 @@ class TestAlertView: BaseAlertView {
     func creatAlertView() {
         drowBorder(self, .gray, 3.0)
         self.backgroundColor = .white
-        let marllbl = creatLable(getFont(14), text: "继承BaseAlertView，创建你想要的alert")
+        let marllbl = creatLable(getFont(14), "继承BaseAlertView，创建你想要的alert")
         marllbl.frame = .init(x: 0, y: 0, width: VIEW_WIDTH(self), height: VIEW_HEIGHT(self))
         marllbl.center = self.center
         marllbl.textAlignment = .center

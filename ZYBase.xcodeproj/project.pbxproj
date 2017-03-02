@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350D47E21E652997001B0C77 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D47E11E652997001B0C77 /* WebVC.swift */; };
+		350D47EA1E657F80001B0C77 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 350D47E91E657F80001B0C77 /* index.html */; };
 		3574AE651E56FEEC00B281C8 /* BaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */; };
-		3574AE671E56FFB400B281C8 /* RootWebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3574AE661E56FFB400B281C8 /* RootWebManager.swift */; };
 		357553261E4817C5005A0755 /* ZYBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553241E4817C5005A0755 /* ZYBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		357553B61E481804005A0755 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532D1E481803005A0755 /* BaseAlertView.swift */; };
 		357553B71E481804005A0755 /* BaseSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532E1E481803005A0755 /* BaseSetting.swift */; };
@@ -67,6 +68,16 @@
 		3575547E1E481B01005A0755 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357554271E481804005A0755 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3577B0271E5D92B10029594D /* UINavigationController+SGProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3577B0281E5D92B10029594D /* UINavigationController+SGProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */; };
+		357805471E67B2AD007AB282 /* ZYCustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357805461E67B2AD007AB282 /* ZYCustomActionSheet.swift */; };
+		3578F80E1E60220D0003E21E /* BadgeNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F80D1E60220D0003E21E /* BadgeNumberVC.swift */; };
+		3578F8101E6023040003E21E /* CustomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F80F1E6023040003E21E /* CustomAlertVC.swift */; };
+		3578F8121E6023120003E21E /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8111E6023120003E21E /* ScanVC.swift */; };
+		3578F8141E6023280003E21E /* AutoCellHightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8131E6023280003E21E /* AutoCellHightVC.swift */; };
+		3578F8161E6023500003E21E /* AorKDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8151E6023500003E21E /* AorKDemoVC.swift */; };
+		3578F8181E6023650003E21E /* WKWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8171E6023650003E21E /* WKWebVC.swift */; };
+		3578F81A1E6039640003E21E /* BaseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8191E6039640003E21E /* BaseWebView.swift */; };
+		3593596F1E66772100316A58 /* ZYCustomSelectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593596E1E66772100316A58 /* ZYCustomSelectAlert.swift */; };
+		359359711E669F0200316A58 /* ZYCustomActionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359359701E669F0200316A58 /* ZYCustomActionAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,8 +150,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		350D47E11E652997001B0C77 /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
+		350D47E91E657F80001B0C77 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebVC.swift; sourceTree = "<group>"; };
-		3574AE661E56FFB400B281C8 /* RootWebManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWebManager.swift; sourceTree = "<group>"; };
 		357553211E4817C5005A0755 /* ZYBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZYBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		357553241E4817C5005A0755 /* ZYBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBase.h; sourceTree = "<group>"; };
 		357553251E4817C5005A0755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,6 +211,16 @@
 		3575545F1E48194A005A0755 /* ZYBaseDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZYBaseDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SGProgress.h"; sourceTree = "<group>"; };
 		3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SGProgress.m"; sourceTree = "<group>"; };
+		357805461E67B2AD007AB282 /* ZYCustomActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYCustomActionSheet.swift; sourceTree = "<group>"; };
+		3578F80D1E60220D0003E21E /* BadgeNumberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeNumberVC.swift; sourceTree = "<group>"; };
+		3578F80F1E6023040003E21E /* CustomAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertVC.swift; sourceTree = "<group>"; };
+		3578F8111E6023120003E21E /* ScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
+		3578F8131E6023280003E21E /* AutoCellHightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCellHightVC.swift; sourceTree = "<group>"; };
+		3578F8151E6023500003E21E /* AorKDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AorKDemoVC.swift; sourceTree = "<group>"; };
+		3578F8171E6023650003E21E /* WKWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebVC.swift; sourceTree = "<group>"; };
+		3578F8191E6039640003E21E /* BaseWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebView.swift; sourceTree = "<group>"; };
+		3593596E1E66772100316A58 /* ZYCustomSelectAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYCustomSelectAlert.swift; sourceTree = "<group>"; };
+		359359701E669F0200316A58 /* ZYCustomActionAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYCustomActionAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +283,7 @@
 				3575532F1E481803005A0755 /* BaseUI.swift */,
 				357553301E481803005A0755 /* BaseVC.swift */,
 				3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */,
-				3574AE661E56FFB400B281C8 /* RootWebManager.swift */,
+				3578F8191E6039640003E21E /* BaseWebView.swift */,
 				357553311E481803005A0755 /* RootManager.swift */,
 			);
 			path = BaseSet;
@@ -394,6 +416,7 @@
 				357553A91E481804005A0755 /* ZYAlertView.m */,
 				357553AA1E481804005A0755 /* ZYAlertWindow.h */,
 				357553AB1E481804005A0755 /* ZYAlertWindow.m */,
+				3593596D1E66766B00316A58 /* ExampleAlert */,
 			);
 			path = ZYCustomeAlert;
 			sourceTree = "<group>";
@@ -435,6 +458,7 @@
 		357554301E4818B7005A0755 /* ZYBaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				350D47E91E657F80001B0C77 /* index.html */,
 				357554311E4818B7005A0755 /* AppDelegate.swift */,
 				357554811E481C1E005A0755 /* Controllers */,
 				357554821E481C33005A0755 /* Models */,
@@ -453,6 +477,7 @@
 			children = (
 				357554331E4818B7005A0755 /* ViewController.swift */,
 				3575545B1E48194A005A0755 /* ViewController1.swift */,
+				3578F80C1E6021EB0003E21E /* SubVCS */,
 				3575545C1E48194A005A0755 /* ViewController2.swift */,
 				3575545D1E48194A005A0755 /* ViewController3.swift */,
 				3575545E1E48194A005A0755 /* ViewController4.swift */,
@@ -487,6 +512,78 @@
 				3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */,
 			);
 			path = "UINavigationController+SGProgress";
+			sourceTree = "<group>";
+		};
+		3578F80C1E6021EB0003E21E /* SubVCS */ = {
+			isa = PBXGroup;
+			children = (
+				3593596A1E6670F700316A58 /* BadgeNumberDemo */,
+				359359691E6670C000316A58 /* CustomAlertDemo */,
+				359359681E6670B800316A58 /* ScanDemo */,
+				359359671E6670AC00316A58 /* AutoCellHeightDemo */,
+				359359661E66708500316A58 /* AOrKDemo */,
+				359359651E66706A00316A58 /* WKWebViewDemo */,
+			);
+			path = SubVCS;
+			sourceTree = "<group>";
+		};
+		359359651E66706A00316A58 /* WKWebViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3578F8171E6023650003E21E /* WKWebVC.swift */,
+				350D47E11E652997001B0C77 /* WebVC.swift */,
+			);
+			name = WKWebViewDemo;
+			sourceTree = "<group>";
+		};
+		359359661E66708500316A58 /* AOrKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3578F8151E6023500003E21E /* AorKDemoVC.swift */,
+			);
+			name = AOrKDemo;
+			sourceTree = "<group>";
+		};
+		359359671E6670AC00316A58 /* AutoCellHeightDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3578F8131E6023280003E21E /* AutoCellHightVC.swift */,
+			);
+			name = AutoCellHeightDemo;
+			sourceTree = "<group>";
+		};
+		359359681E6670B800316A58 /* ScanDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3578F8111E6023120003E21E /* ScanVC.swift */,
+			);
+			name = ScanDemo;
+			sourceTree = "<group>";
+		};
+		359359691E6670C000316A58 /* CustomAlertDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3578F80F1E6023040003E21E /* CustomAlertVC.swift */,
+			);
+			name = CustomAlertDemo;
+			sourceTree = "<group>";
+		};
+		3593596A1E6670F700316A58 /* BadgeNumberDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3578F80D1E60220D0003E21E /* BadgeNumberVC.swift */,
+			);
+			name = BadgeNumberDemo;
+			sourceTree = "<group>";
+		};
+		3593596D1E66766B00316A58 /* ExampleAlert */ = {
+			isa = PBXGroup;
+			children = (
+				3593596E1E66772100316A58 /* ZYCustomSelectAlert.swift */,
+				359359701E669F0200316A58 /* ZYCustomActionAlert.swift */,
+				357805461E67B2AD007AB282 /* ZYCustomActionSheet.swift */,
+			);
+			path = ExampleAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,6 +741,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3575543C1E4818B7005A0755 /* LaunchScreen.storyboard in Resources */,
+				350D47EA1E657F80001B0C77 /* index.html in Resources */,
 				357554391E4818B7005A0755 /* Assets.xcassets in Resources */,
 				357554371E4818B7005A0755 /* Main.storyboard in Resources */,
 			);
@@ -666,16 +764,19 @@
 				357553EB1E481804005A0755 /* LBXScanViewStyle.swift in Sources */,
 				3574AE651E56FEEC00B281C8 /* BaseWebVC.swift in Sources */,
 				357553BA1E481804005A0755 /* RootManager.swift in Sources */,
+				3593596F1E66772100316A58 /* ZYCustomSelectAlert.swift in Sources */,
 				357553B61E481804005A0755 /* BaseAlertView.swift in Sources */,
 				357553B71E481804005A0755 /* BaseSetting.swift in Sources */,
 				357553B81E481804005A0755 /* BaseUI.swift in Sources */,
 				357553B91E481804005A0755 /* BaseVC.swift in Sources */,
+				357805471E67B2AD007AB282 /* ZYCustomActionSheet.swift in Sources */,
 				357554151E481804005A0755 /* UIWindow+ZYUitily.m in Sources */,
+				359359711E669F0200316A58 /* ZYCustomActionAlert.swift in Sources */,
 				357554211E481804005A0755 /* UITableViewCell+AutoCellHeight.swift in Sources */,
-				3574AE671E56FFB400B281C8 /* RootWebManager.swift in Sources */,
 				357553E61E481804005A0755 /* LBXPermissions.swift in Sources */,
 				357553EA1E481804005A0755 /* LBXScanViewController.swift in Sources */,
 				3577B0281E5D92B10029594D /* UINavigationController+SGProgress.m in Sources */,
+				3578F81A1E6039640003E21E /* BaseWebView.swift in Sources */,
 				357553E81E481804005A0755 /* LBXScanNetAnimation.swift in Sources */,
 				357554111E481804005A0755 /* TTTAttributedLabel.m in Sources */,
 				3575540F1E481804005A0755 /* SwiftyJSON.swift in Sources */,
@@ -690,15 +791,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3578F80E1E60220D0003E21E /* BadgeNumberVC.swift in Sources */,
+				3578F8181E6023650003E21E /* WKWebVC.swift in Sources */,
+				3578F8161E6023500003E21E /* AorKDemoVC.swift in Sources */,
 				357554681E48194A005A0755 /* ViewController3.swift in Sources */,
 				357554661E48194A005A0755 /* ViewController1.swift in Sources */,
 				357554621E48194A005A0755 /* ResultViewController.swift in Sources */,
 				357554631E48194A005A0755 /* TestAlertView.swift in Sources */,
 				357554341E4818B7005A0755 /* ViewController.swift in Sources */,
+				3578F8141E6023280003E21E /* AutoCellHightVC.swift in Sources */,
+				350D47E21E652997001B0C77 /* WebVC.swift in Sources */,
 				357554641E48194A005A0755 /* TestModel.swift in Sources */,
 				357554671E48194A005A0755 /* ViewController2.swift in Sources */,
+				3578F8101E6023040003E21E /* CustomAlertVC.swift in Sources */,
 				357554691E48194A005A0755 /* ViewController4.swift in Sources */,
 				357554321E4818B7005A0755 /* AppDelegate.swift in Sources */,
+				3578F8121E6023120003E21E /* ScanVC.swift in Sources */,
 				357554651E48194A005A0755 /* TestTableViewCell.swift in Sources */,
 				357554611E48194A005A0755 /* MyQRCodeViewController.swift in Sources */,
 				357554601E48194A005A0755 /* ChatModel.swift in Sources */,
@@ -866,6 +974,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -886,6 +995,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -902,6 +1012,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZYBaseDemo/ZYBaseDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -918,6 +1029,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZYBaseDemo/ZYBaseDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

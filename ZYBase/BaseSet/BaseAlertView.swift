@@ -8,6 +8,7 @@
 
 open class BaseAlertView: UIView {
     
+    
     open func showZYAlert(_ style:ZYAlertViewTransitionStyle,_ isUnDismiss:Bool) {
         let aletView = ZYAlertView()
         aletView.containerView = self
@@ -17,8 +18,9 @@ open class BaseAlertView: UIView {
     }
     
     open func dismissZYAlert() {
-        let alertView = self.superview as! ZYAlertView
-        alertView.dismiss(animated: true)
+        if self.superview is ZYAlertView {
+            let alertView = self.superview as! ZYAlertView
+            alertView.dismiss(animated: true)
+        }
     }
-
 }

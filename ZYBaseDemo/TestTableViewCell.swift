@@ -39,7 +39,7 @@ class TestTableViewCell: UITableViewCell {
         btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         self.contentView.addSubview(btn)
         
-        lbl = creatLable(getFont(14), text: nil)
+        lbl = creatLable(getFont(14), nil)
         lbl.numberOfLines = 0
         lbl.backgroundColor = .brown
         drowBorder(lbl, .blue, 6.0)

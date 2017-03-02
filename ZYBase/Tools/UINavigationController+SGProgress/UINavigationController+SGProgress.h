@@ -13,6 +13,11 @@
 
 @interface UINavigationController (SGProgress)
 
+/**
+ * 进度条的高度
+ */
+@property(nonatomic,strong)NSNumber *progressHeight;
+
 - (void)showSGProgress;
 - (void)showSGProgressWithDuration:(float)duration;
 - (void)showSGProgressWithDuration:(float)duration andTintColor:(UIColor *)tintColor;

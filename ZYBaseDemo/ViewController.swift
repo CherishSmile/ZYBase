@@ -7,28 +7,56 @@
 //
 
 import ZYBase
-class ViewController: BaseVC {
+class ViewController: BaseVC,UITableViewDelegate,UITableViewDataSource{
+
+    
+    fileprivate var demoTab : UITableView!
+    fileprivate var demoArr : Array<String> = []
+    fileprivate var vcArr : Array<String> = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        let view = UIImageView(frame: CGRect(x: 100, y: 100, width: SCREEN_WIDTH-200, height: 100))
-        view.backgroundColor = .yellow
-        self.view.addSubview(view)
+        vcArr = ["BadgeNumberVC","CustomAlertVC","ScanVC","AutoCellHightVC","AorKDemoVC","WKWebVC"]
         
-    
-        
-        creatBadgeView(view, .topRight, "20")
-        creatBadgeView(view, .bottomLeft, "4000")
+        demoArr = ["badgeNumber示例","自定义alert示例","扫一扫示例","TableView自动计算行高示例","Alamofire和Kingfisher示例","WKWebview示例"]
         
         
-        setRightItem(self, "展示alert", .white, #selector(itemClick))
+        demoTab = creatTabView(self, .plain, { (make) in
+            make.top.equalTo(NAV_HEIGHT)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(-TOOLBAR_HEIGHT)
+        })
         
-        
-        // Do any additional setup after loading the view.
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return demoArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var demoCell = tableView.dequeueReusableCell(withIdentifier: "CellID")
+        if demoCell == nil {
+            demoCell = UITableViewCell.init(style: .default, reuseIdentifier: "CellID")
+        }
+        demoCell?.textLabel?.text = demoArr[indexPath.row];
+        return demoCell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = classFromString(vcArr[indexPath.row])
+        if let detailVC = vc {
+            detailVC.title = demoArr[indexPath.row]
+            detailVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }

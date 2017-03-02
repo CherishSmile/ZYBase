@@ -17,25 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setBarAttribute(.blue, .brown, .cyan, .white)
+        RootManager.shareManager.creatRootVC(window!, [ViewController.self,ViewController1.self], ["示例","设置"], [#imageLiteral(resourceName: "tab_unselect_demo"),#imageLiteral(resourceName: "tab_unselect_set")], [#imageLiteral(resourceName: "tab_select_demo"),#imageLiteral(resourceName: "tab_select_set")])
         
-        RootManager.shareManager.creatRootVC(window!,
-                                             [ViewController.self,
-                                              ViewController1.self,
-                                              ViewController2.self,
-                                              ViewController3.self,
-                                              ViewController4.self],
-                                             ["一","二","三","四","五"],
-                                             [creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .blue),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .yellow),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .cyan),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .brown),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .gray)],
-                                             [creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .lightGray),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .lightGray),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .lightGray),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .lightGray),
-                                              creatImage(CGRect.init(x: 0, y: 0, width: 30, height: 30), .lightGray)]
-        )
         return true
     }
 

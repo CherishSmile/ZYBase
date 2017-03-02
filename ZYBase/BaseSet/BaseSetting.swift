@@ -16,6 +16,7 @@ public let SCREEN_WIDTH=UIScreen.main.bounds.size.width
 public let SCREEN_HEIGHT=UIScreen.main.bounds.size.height
 public let SCREEN_MAX_LENGTH=max(SCREEN_WIDTH, SCREEN_HEIGHT)
 public let SCREEN_MIN_LENGTH=min(SCREEN_WIDTH, SCREEN_HEIGHT)
+
 ///导航高度
 public let NAV_HEIGHT : CGFloat = 64.0
 ///工具栏高度
@@ -28,14 +29,19 @@ public func printLog<T>(_ items:T ,file:String = #file,method: String = #functio
 }
 
 
-///设备类型
+/**
+ *  设备类型
+ */
 public enum DeveiceType : Int{
     case iPad
     case iPhone
     case retina
     case unknown
 }
-///手机型号
+
+/**
+ *  手机型号
+ */
 public enum iPhoneType : Int{
     case iPhone4Series
     case iPhone5Series
@@ -44,9 +50,9 @@ public enum iPhoneType : Int{
     case unknowSeries
 }
 
-/// 判断设备类型
-///
-/// - Returns: 设备类型
+/**
+ *  判断设备类型
+ */
 public func deveiceType() -> DeveiceType {
     if UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiom.pad {
         return DeveiceType.iPad
@@ -59,9 +65,10 @@ public func deveiceType() -> DeveiceType {
     }
 }
 
-/// 判断手机类型
-///
-/// - Returns: 手机类型
+
+/**
+ *  判断手机类型
+ */
 public func PhoneType() -> iPhoneType{
     if deveiceType()==DeveiceType.iPhone {
         if  SCREEN_MAX_LENGTH<568.0 {
@@ -80,10 +87,10 @@ public func PhoneType() -> iPhoneType{
     }
 }
 
-/// 像素适配（宽）
-///
-/// - Parameter width: 像素宽
-/// - Returns: 物理尺寸宽
+
+/**
+ *  像素适配（宽）（以6为基准750*1334
+ */
 public func getPointByPixelW(_ width:CGFloat) -> CGFloat{
     var pixelW = CGFloat()
     switch PhoneType() {
@@ -98,10 +105,10 @@ public func getPointByPixelW(_ width:CGFloat) -> CGFloat{
     
 }
 
-/// 像素适配（高）（以6为基准750*1334）
-///
-/// - Parameter height: 像素高
-/// - Returns: 物理尺寸高
+
+/**
+ *  像素适配（高）（以6为基准750*1334
+ */
 public func getPointByPixelH(_ height:CGFloat) -> CGFloat{
     var pixelH = CGFloat()
     switch PhoneType() {
@@ -115,22 +122,18 @@ public func getPointByPixelH(_ height:CGFloat) -> CGFloat{
     return pixelH
 }
 
-/// 颜色
-///
-/// - Parameter rgbValue: 16进制的rgb色值
-/// - Returns: 所需的颜色
+
+/**
+ *  颜色 rgbValue: 16进制的rgb色值
+ */
 public func UIColorFromRGB(_ rgbValue:NSInteger) -> UIColor {
     let color = UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0, blue: ((CGFloat)(rgbValue & 0xFF))/255.0, alpha: 1.0)
     return color
 }
 
-/// 画圆角
-///
-/// - Parameters:
-///   - view: 需要画圆角的视图
-///   - color: 线的颜色
-///   - width: 线的宽度
-///   - radiuce: 弧度
+/**
+ *  画圆角（自定义线宽）
+ */
 public func drowBorderWidth(_ view:UIView,_ color:UIColor,_ width:CGFloat,_ radiuce:CGFloat){
     view.layer.borderColor=color.cgColor
     view.layer.borderWidth=width
@@ -138,20 +141,17 @@ public func drowBorderWidth(_ view:UIView,_ color:UIColor,_ width:CGFloat,_ radi
     view.layer.masksToBounds=true
 }
 
-/// 画圆角（固定线宽0.5）
-///
-/// - Parameters:
-///   - view: 需要画圆角的视图
-///   - color: 线的颜色
-///   - radiuce: 弧度
+/**
+ *  画圆角（固定线宽0.5）
+ */
 public func drowBorder(_ view:UIView,_ color:UIColor,_ radiuce:CGFloat){
     drowBorderWidth(view, color, 0.5, radiuce)
 }
 
-/// 转json字符串
-///
-/// - Parameter jsonDict: json格式的字典
-/// - Returns: json字符串
+
+/**
+ *  转json字符串
+ */
 public func changeToJsonDicString(_ jsonDict:Dictionary<String, Any>) -> String? {
     var jsonStr : String?
     do {
@@ -164,12 +164,9 @@ public func changeToJsonDicString(_ jsonDict:Dictionary<String, Any>) -> String?
     return jsonStr
 }
 
-/// 展示alert
-///
-/// - Parameters:
-///   - title: title
-///   - message: message
-///   - vc: 当前vc
+/**
+ *  展示alert
+ */
 public func showAlert(_ title:String,_ message:String,_ vc:UIViewController){
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     let sureAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
@@ -177,12 +174,10 @@ public func showAlert(_ title:String,_ message:String,_ vc:UIViewController){
     vc.present(alert, animated:true, completion: nil)
 }
 
-/// 压缩图片
-///
-/// - Parameters:
-///   - theImage: 原始图片
-///   - maxSize: 压缩最大size
-/// - Returns: 压缩后的图片
+
+/**
+ *  压缩图片
+ */
 public func compressImage(_ theImage:UIImage,_ maxSize:CGFloat) -> UIImage? {
     let width = theImage.size.width
     let height = theImage.size.height
@@ -215,17 +210,17 @@ public func compressImage(_ theImage:UIImage,_ maxSize:CGFloat) -> UIImage? {
     return newImage
 }
 
-/// 获取window
-///
-/// - Returns: window
+
+/**
+ *  获取window
+ */
 public func getWindow() -> UIWindow {
     return UIApplication.shared.keyWindow!
 }
-///
-/// - Parameters:
-///   - time: 任意时间 单位s
-///   - timeformat: 时间格式 “yyyy-MM-dd HH:mm”
-/// - Returns: 格式化后的时间
+
+/**
+ *  格式化后的时间 ：时间格式 “yyyy-MM-dd HH:mm” 单位s
+ */
 public func getTimeDate(_ time:TimeInterval ,_ timeformat:String) -> String {
     let date = Date(timeIntervalSince1970: time/1000)
     let formatter = DateFormatter()
@@ -234,49 +229,45 @@ public func getTimeDate(_ time:TimeInterval ,_ timeformat:String) -> String {
     return strTime
 }
 
-/// 获取当前时间
-///
-/// - Parameter timeformat: 时间格式 "yyyy-MM-dd HH:mm"
-/// - Returns: 格式化后的当前时间
+/**
+ *  获取当前时间：时间格式 “yyyy-MM-dd HH:mm” 单位s
+ */
 public func getCurrentTime(_ timeformat:String) -> String {
     let currentTime = Date().timeIntervalSince1970
     return getTimeDate(currentTime, timeformat)
 }
 
-/// 设置图片
-///
-/// - Parameter image: 图片名字
-/// - Returns: 图片
+/**
+ *  设置图片
+ */
 public func getImage(_ image:String) -> UIImage?{
     return UIImage(named: image)
 }
 
-/// 设置字体大小
-///
-/// - Parameter fontSize: 字体型号
-/// - Returns: 字体
+/**
+ *  设置字体大小
+ */
 public func getFont(_ fontSize:CGFloat) -> UIFont{
     return UIFont.systemFont(ofSize: fontSize)
 }
-/// 获取视图的宽
-///
-/// - Parameter view: 视图
-/// - Returns: 视图宽
 
+/**
+ *  获取视图的宽
+ */
 public func VIEW_WIDTH(_ view:UIView)->CGFloat{
     return view.frame.size.width
 }
-/// 获取视图的高
-///
-/// - Parameter view: 视图
-/// - Returns: 视图高
+
+/**
+ *  获取视图的高
+ */
 public func VIEW_HEIGHT(_ view:UIView)->CGFloat{
     return view.frame.size.height
 }
-/// 判断手机号
-///
-/// - Parameter mobileNum: 手机号码
-/// - Returns: true 是手机号 false 不是手机号
+
+/**
+ *  判断手机号
+ */
 public func isMobileNumber(_ mobileNum:String) -> Bool {
     let mobile = "^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\\d{8}$"
     let  CM = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)"
@@ -299,11 +290,9 @@ public func isMobileNumber(_ mobileNum:String) -> Bool {
     }
 }
 
-/// 原生打电话
-///
-/// - Parameters:
-///   - number: 电话号码
-///   - vc: 当前vc
+/**
+ *  原生打电话
+ */
 public func callNumber(_ number:String ,_ vc : UIViewController) {
     let alert = UIAlertController(title: nil, message: "确定拨打\n\(number)?", preferredStyle: UIAlertControllerStyle.alert)
     let cancleAction = UIAlertAction(title: "取消", style: .cancel) { (alert) in
@@ -318,11 +307,10 @@ public func callNumber(_ number:String ,_ vc : UIViewController) {
     vc.present(alert, animated:true, completion: nil)
 }
 
-/// webView打电话
-///
-/// - Parameters:
-///   - number: 电话号码
-///   - view: 父视图
+
+/**
+ *  webView打电话
+ */
 public func callNumberByWeb(_ number:String ,_ view:UIView) {
     let numberUrl = URL(string: "tel://"+number)
     let request = URLRequest(url: numberUrl!)
@@ -331,9 +319,10 @@ public func callNumberByWeb(_ number:String ,_ view:UIView) {
     view.addSubview(webView)
 }
 
-/// 获取当前活跃的VC
-///
-/// - Returns: 当前活跃的vc
+
+/**
+ *  获取当前活跃的VC
+ */
 public func getActivityVC() -> UIViewController {
     var result : UIViewController?
     var window = UIApplication.shared.keyWindow
@@ -361,9 +350,10 @@ public func getActivityVC() -> UIViewController {
     return result!
 }
 
-/// 是否允许定位
-///
-/// - Returns: true or false
+
+/**
+ *  是否允许定位
+ */
 public func isAllowLoaction() -> Bool{
     if CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus()==CLAuthorizationStatus.notDetermined || CLLocationManager.authorizationStatus()==CLAuthorizationStatus.authorizedAlways || CLLocationManager.authorizationStatus()==CLAuthorizationStatus.authorizedWhenInUse) {
         return true
@@ -374,6 +364,27 @@ public func isAllowLoaction() -> Bool{
     }
     return false
 }
+/**
+ *  把String转化为UIViewController
+ */
+public func classFromString(_ className:String) -> UIViewController?{
+    //Swift中命名空间的概念
+    guard let nameSpage = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
+        printLog("没有命名空间")
+        return nil
+    }
+    guard let childVcClass = NSClassFromString(nameSpage + "." + className) else {
+        printLog("没有获取到对应的class")
+        return nil
+    }
+    guard let childVcType = childVcClass as? UIViewController.Type else {
+        printLog("没有得到的类型")
+        return nil
+    }
+    let vc = childVcType.init()
+    return vc
+}
+
 
 /// 完整的url
 ///

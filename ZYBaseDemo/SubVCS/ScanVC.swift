@@ -1,36 +1,27 @@
 //
-//  BaseVC.swift
-//  BaseDemo
+//  ScanVC.swift
+//  ZYBase
 //
-//  Created by Mzywx on 2016/12/21.
-//  Copyright © 2016年 Mzywx. All rights reserved.
+//  Created by Mzywx on 2017/2/24.
+//  Copyright © 2017年 Mzywx. All rights reserved.
 //
 
-open class BaseVC: UIViewController {
+import UIKit
 
-    override  open func viewDidLoad() {
+class ScanVC: BaseVC {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.view.backgroundColor = .white
-                
         // Do any additional setup after loading the view.
     }
 
-    override  open func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override  open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 
-    
-    deinit {
-        printLog("\(self.classForCoder) deinit");
-    }
-    
     /*
     // MARK: - Navigation
 

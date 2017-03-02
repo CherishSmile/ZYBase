@@ -12,14 +12,17 @@ open class RootManager: NSObject {
     private override init(){
         
     }
-    /// 创建TabBar
-    ///
-    /// - Parameters:
-    ///   - window: window
-    ///   - controllers: tabBarVC的viewControllers
-    ///   - titles: tabBarItem的title
-    ///   - images: tabBarItem的image
-    ///   - selectImages: tabBarItem的selectimage
+ 
+    
+    /**
+     *  创建TabBar
+     * - Parameters:
+     *   - window: window
+     *   - controllers: tabBarVC的viewControllers
+     *   - titles: tabBarItem的title
+     *   - images: tabBarItem的image
+     *   - selectImages: tabBarItem的selectimage
+     */
     open func creatRootVC(_ window:UIWindow,_ controllers:Array<AnyClass>,_ titles:Array<String>?,_ images:Array<UIImage>?,_ selectImages:Array<UIImage>?) {
         var navArr:Array<UIViewController> = []
         for i in 0..<controllers.count {
@@ -49,11 +52,13 @@ open class RootManager: NSObject {
         window.makeKeyAndVisible()
     }
     
-    /// 创建启动页
-    ///
-    /// - Parameters:
-    ///   - window: window
-    ///   - controller: controller
+
+    /**
+     *  创建启动页
+     * - Parameters:
+     *   - window: window
+     *   - controller: controller
+     */
     open func creatIntroVC(_ window:UIWindow,_ controller:AnyClass) {
         let introCls = controller as! UIViewController.Type
         let introVC = introCls.init()
