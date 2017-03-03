@@ -69,7 +69,6 @@
 		3577B0271E5D92B10029594D /* UINavigationController+SGProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3577B0281E5D92B10029594D /* UINavigationController+SGProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */; };
 		357805471E67B2AD007AB282 /* ZYCustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357805461E67B2AD007AB282 /* ZYCustomActionSheet.swift */; };
-		3578054F1E6824D6007AB282 /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3578054E1E6824D6007AB282 /* KINWebBrowserViewController.m */; };
 		3578F80E1E60220D0003E21E /* BadgeNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F80D1E60220D0003E21E /* BadgeNumberVC.swift */; };
 		3578F8101E6023040003E21E /* CustomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F80F1E6023040003E21E /* CustomAlertVC.swift */; };
 		3578F8121E6023120003E21E /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8111E6023120003E21E /* ScanVC.swift */; };
@@ -77,12 +76,13 @@
 		3578F8161E6023500003E21E /* AorKDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8151E6023500003E21E /* AorKDemoVC.swift */; };
 		3578F8181E6023650003E21E /* WKWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8171E6023650003E21E /* WKWebVC.swift */; };
 		3578F81A1E6039640003E21E /* BaseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578F8191E6039640003E21E /* BaseWebView.swift */; };
-		359261161E68FAF20082575E /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3592610A1E68FAF20082575E /* backbutton.png */; };
-		359261171E68FAF20082575E /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3592610B1E68FAF20082575E /* backbutton@2x.png */; };
-		359261181E68FAF20082575E /* backbutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3592610C1E68FAF20082575E /* backbutton@3x.png */; };
-		359261191E68FAF20082575E /* forwardbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3592610D1E68FAF20082575E /* forwardbutton.png */; };
-		3592611A1E68FAF20082575E /* forwardbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3592610E1E68FAF20082575E /* forwardbutton@2x.png */; };
-		3592611B1E68FAF20082575E /* forwardbutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3592610F1E68FAF20082575E /* forwardbutton@3x.png */; };
+		3592612A1E6910E40082575E /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 359261221E6910E40082575E /* backbutton.png */; };
+		3592612B1E6910E40082575E /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 359261231E6910E40082575E /* backbutton@2x.png */; };
+		3592612C1E6910E40082575E /* backbutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 359261241E6910E40082575E /* backbutton@3x.png */; };
+		3592612D1E6910E40082575E /* forwardbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 359261251E6910E40082575E /* forwardbutton.png */; };
+		3592612E1E6910E40082575E /* forwardbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 359261261E6910E40082575E /* forwardbutton@2x.png */; };
+		3592612F1E6910E40082575E /* forwardbutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 359261271E6910E40082575E /* forwardbutton@3x.png */; };
+		359261301E6910E40082575E /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359261291E6910E40082575E /* KINWebBrowserViewController.m */; };
 		3593596F1E66772100316A58 /* ZYCustomSelectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593596E1E66772100316A58 /* ZYCustomSelectAlert.swift */; };
 		359359711E669F0200316A58 /* ZYCustomActionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359359701E669F0200316A58 /* ZYCustomActionAlert.swift */; };
 /* End PBXBuildFile section */
@@ -219,8 +219,6 @@
 		3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SGProgress.h"; sourceTree = "<group>"; };
 		3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SGProgress.m"; sourceTree = "<group>"; };
 		357805461E67B2AD007AB282 /* ZYCustomActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYCustomActionSheet.swift; sourceTree = "<group>"; };
-		3578054D1E6824D6007AB282 /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
-		3578054E1E6824D6007AB282 /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
 		3578F80D1E60220D0003E21E /* BadgeNumberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeNumberVC.swift; sourceTree = "<group>"; };
 		3578F80F1E6023040003E21E /* CustomAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertVC.swift; sourceTree = "<group>"; };
 		3578F8111E6023120003E21E /* ScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
@@ -228,12 +226,14 @@
 		3578F8151E6023500003E21E /* AorKDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AorKDemoVC.swift; sourceTree = "<group>"; };
 		3578F8171E6023650003E21E /* WKWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebVC.swift; sourceTree = "<group>"; };
 		3578F8191E6039640003E21E /* BaseWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebView.swift; sourceTree = "<group>"; };
-		3592610A1E68FAF20082575E /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
-		3592610B1E68FAF20082575E /* backbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@2x.png"; sourceTree = "<group>"; };
-		3592610C1E68FAF20082575E /* backbutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@3x.png"; sourceTree = "<group>"; };
-		3592610D1E68FAF20082575E /* forwardbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardbutton.png; sourceTree = "<group>"; };
-		3592610E1E68FAF20082575E /* forwardbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardbutton@2x.png"; sourceTree = "<group>"; };
-		3592610F1E68FAF20082575E /* forwardbutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardbutton@3x.png"; sourceTree = "<group>"; };
+		359261221E6910E40082575E /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
+		359261231E6910E40082575E /* backbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@2x.png"; sourceTree = "<group>"; };
+		359261241E6910E40082575E /* backbutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@3x.png"; sourceTree = "<group>"; };
+		359261251E6910E40082575E /* forwardbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardbutton.png; sourceTree = "<group>"; };
+		359261261E6910E40082575E /* forwardbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardbutton@2x.png"; sourceTree = "<group>"; };
+		359261271E6910E40082575E /* forwardbutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardbutton@3x.png"; sourceTree = "<group>"; };
+		359261281E6910E40082575E /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
+		359261291E6910E40082575E /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
 		3593596E1E66772100316A58 /* ZYCustomSelectAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYCustomSelectAlert.swift; sourceTree = "<group>"; };
 		359359701E669F0200316A58 /* ZYCustomActionAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYCustomActionAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -492,7 +492,6 @@
 			children = (
 				357554331E4818B7005A0755 /* DemoVC.swift */,
 				3575545B1E48194A005A0755 /* SetVC.swift */,
-				3578054C1E6824D6007AB282 /* KINWebBrowser */,
 				3578F80C1E6021EB0003E21E /* SubVCS */,
 				3575545D1E48194A005A0755 /* ViewController3.swift */,
 				3575545E1E48194A005A0755 /* ViewController4.swift */,
@@ -529,16 +528,6 @@
 			path = "UINavigationController+SGProgress";
 			sourceTree = "<group>";
 		};
-		3578054C1E6824D6007AB282 /* KINWebBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				3578054D1E6824D6007AB282 /* KINWebBrowserViewController.h */,
-				3578054E1E6824D6007AB282 /* KINWebBrowserViewController.m */,
-				359261031E68FAF20082575E /* imageResource */,
-			);
-			path = KINWebBrowser;
-			sourceTree = "<group>";
-		};
 		3578F80C1E6021EB0003E21E /* SubVCS */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,25 +542,36 @@
 			path = SubVCS;
 			sourceTree = "<group>";
 		};
-		359261031E68FAF20082575E /* imageResource */ = {
-			isa = PBXGroup;
-			children = (
-				3592610A1E68FAF20082575E /* backbutton.png */,
-				3592610B1E68FAF20082575E /* backbutton@2x.png */,
-				3592610C1E68FAF20082575E /* backbutton@3x.png */,
-				3592610D1E68FAF20082575E /* forwardbutton.png */,
-				3592610E1E68FAF20082575E /* forwardbutton@2x.png */,
-				3592610F1E68FAF20082575E /* forwardbutton@3x.png */,
-			);
-			path = imageResource;
-			sourceTree = "<group>";
-		};
 		3592611F1E69020E0082575E /* BrowserDemo */ = {
 			isa = PBXGroup;
 			children = (
+				359261201E6910E40082575E /* KINWebBrowser */,
 				3575545C1E48194A005A0755 /* BrowserVC.swift */,
 			);
 			name = BrowserDemo;
+			sourceTree = "<group>";
+		};
+		359261201E6910E40082575E /* KINWebBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				359261211E6910E40082575E /* imageResource */,
+				359261281E6910E40082575E /* KINWebBrowserViewController.h */,
+				359261291E6910E40082575E /* KINWebBrowserViewController.m */,
+			);
+			path = KINWebBrowser;
+			sourceTree = "<group>";
+		};
+		359261211E6910E40082575E /* imageResource */ = {
+			isa = PBXGroup;
+			children = (
+				359261221E6910E40082575E /* backbutton.png */,
+				359261231E6910E40082575E /* backbutton@2x.png */,
+				359261241E6910E40082575E /* backbutton@3x.png */,
+				359261251E6910E40082575E /* forwardbutton.png */,
+				359261261E6910E40082575E /* forwardbutton@2x.png */,
+				359261271E6910E40082575E /* forwardbutton@3x.png */,
+			);
+			path = imageResource;
 			sourceTree = "<group>";
 		};
 		359359651E66706A00316A58 /* WKWebViewDemo */ = {
@@ -787,15 +787,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3592612E1E6910E40082575E /* forwardbutton@2x.png in Resources */,
+				3592612F1E6910E40082575E /* forwardbutton@3x.png in Resources */,
+				3592612A1E6910E40082575E /* backbutton.png in Resources */,
 				3575543C1E4818B7005A0755 /* LaunchScreen.storyboard in Resources */,
 				350D47EA1E657F80001B0C77 /* index.html in Resources */,
-				3592611B1E68FAF20082575E /* forwardbutton@3x.png in Resources */,
-				359261181E68FAF20082575E /* backbutton@3x.png in Resources */,
-				359261171E68FAF20082575E /* backbutton@2x.png in Resources */,
-				3592611A1E68FAF20082575E /* forwardbutton@2x.png in Resources */,
+				3592612B1E6910E40082575E /* backbutton@2x.png in Resources */,
+				3592612C1E6910E40082575E /* backbutton@3x.png in Resources */,
+				3592612D1E6910E40082575E /* forwardbutton.png in Resources */,
 				357554391E4818B7005A0755 /* Assets.xcassets in Resources */,
-				359261161E68FAF20082575E /* backbutton.png in Resources */,
-				359261191E68FAF20082575E /* forwardbutton.png in Resources */,
 				357554371E4818B7005A0755 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,7 +863,7 @@
 				357554651E48194A005A0755 /* TestTableViewCell.swift in Sources */,
 				357554611E48194A005A0755 /* MyQRCodeViewController.swift in Sources */,
 				357554601E48194A005A0755 /* ChatModel.swift in Sources */,
-				3578054F1E6824D6007AB282 /* KINWebBrowserViewController.m in Sources */,
+				359261301E6910E40082575E /* KINWebBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
