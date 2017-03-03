@@ -17,8 +17,7 @@ class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+                
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "browser").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(itemClick))
         
         
@@ -36,6 +35,7 @@ class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
     }
     @objc private func itemClick() {
         let browserVC = BrowserVC()
+        browserVC.loadURLString("http://m.baidu.com")
         let browerNav = UINavigationController(rootViewController: browserVC)
         self.present(browerNav, animated: true, completion: nil)
     }

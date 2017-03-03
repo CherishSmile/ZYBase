@@ -9,16 +9,16 @@
 import ZYBase
 
 
-private let defaultUrl = "http://www.baidu.com"
 
 class BrowserVC: KINWebBrowserViewController{
 
+    var requestUrl : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.showsURLInNavigationBar = true
-        self.loadURLString(defaultUrl)
+        self.loadURLString(requestUrl)
       
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panClick))
         self.navigationController?.navigationBar.addGestureRecognizer(pan)
@@ -44,6 +44,10 @@ class BrowserVC: KINWebBrowserViewController{
         
     }
     
+    
+    deinit {
+        printLog("\(self.classForCoder) deinit")
+    }
     
     
     override func didReceiveMemoryWarning() {

@@ -15,8 +15,20 @@ let WEBTITLE = "title"
 
 open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDelegate {
     
-    public var baseWeb : BaseWebView!
+    
+    open lazy var baseWeb: BaseWebView = {
+        let config = WKWebViewConfiguration.init()
+        let webView = BaseWebView.init(superView: self.view, configuration: config, layout: { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(NAV_HEIGHT)
+            make.bottom.equalTo((self.tabBarController?.tabBar==nil || self.tabBarController?.tabBar.isHidden == true) ? 0 : -TOOLBAR_HEIGHT)
+        })
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        return webView
+    }()
     private var shouldShowProgress : Bool = false
+    private var jsNameArr : Array<String>?
     public var isShowProgress : Bool {
         get{
             return shouldShowProgress
@@ -44,7 +56,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        initWebView()
+    
     }
     
     open func initWebView()  {
@@ -62,6 +74,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
      *  JS调用OC 添加处理脚本
      */
     open func addJavaScriptMessages(_ names:Array<String>){
+        jsNameArr = names
         let userCC = baseWeb.configuration.userContentController
         for name in names {
             userCC.add(self, name: name)
@@ -71,17 +84,17 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
      *  加载网页
      */
     open func webloadHtml(urlStr:String) {
-        if urlStr.lowercased().hasPrefix("http://")||urlStr.lowercased().hasPrefix("https://") {
-            baseWeb.load(URLRequest(url: URL(string: urlStr)!))
-        }else{
-            let htmlPath = Bundle.main.path(forResource: urlStr, ofType: "html")
-            if let path = htmlPath {
-                let request = URLRequest(url: URL(fileURLWithPath: path))
-                baseWeb.load(request)
+            if urlStr.lowercased().hasPrefix("http://")||urlStr.lowercased().hasPrefix("https://") {
+                baseWeb.load(URLRequest(url: URL(string: urlStr)!))
             }else{
-                baseWeb.loadHTMLString(urlStr, baseURL: nil)
+                let htmlPath = Bundle.main.path(forResource: urlStr, ofType: "html")
+                if let path = htmlPath {
+                    let request = URLRequest(url: URL(fileURLWithPath: path))
+                    baseWeb.load(request)
+                }else{
+                    baseWeb.loadHTMLString(urlStr, baseURL: nil)
+                }
             }
-        }
     }
     
     
@@ -105,7 +118,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == WEBPROGRESS {
             if object as? WKWebView == baseWeb {
-                self.navigationController?.setSGProgressPercentage(Float(baseWeb.estimatedProgress*100), andTintColor: UIColor.cyan)
+                self.navigationController?.setSGProgressPercentage(Float((baseWeb.estimatedProgress)*100), andTintColor: UIColor.cyan)
             }else{
                 super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
             }
@@ -183,8 +196,16 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
      }
  
     
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let names = jsNameArr {
+            for jsString in names {
+                baseWeb.configuration.userContentController.removeScriptMessageHandler(forName: jsString)
+            }
+        }
+    }
+    
     deinit {
-        baseWeb.configuration.userContentController.removeAllUserScripts()
         if shouldShowProgress {
             baseWeb.removeObserver(self, forKeyPath: WEBPROGRESS)
         }

@@ -46,7 +46,7 @@ class WKWebVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webvc = WebVC()
         if indexPath.row == 0 {
-            webvc.webUrl = "http://www.baidu.com"
+            webvc.webUrl = "http://www.mzywx.com"
             webvc.loadType = .net
         }else{
             webvc.webUrl = "index"

@@ -10,10 +10,10 @@ import UIKit
 
 
 private let AlertViewWidth:CGFloat = 270.0
-private let AlertViewContentMargin:CGFloat = 9.0;
-private let AlertViewVerticalElementSpace:CGFloat = 10.0;
-private let AlertViewButtonHeight:CGFloat = 44.0;
-private let AlertViewLineLayerWidth:CGFloat = 0.5;
+private let AlertViewContentMargin:CGFloat = 9.0
+private let AlertViewVerticalElementSpace:CGFloat = 10.0
+private let AlertViewButtonHeight:CGFloat = 44.0
+private let AlertViewLineLayerWidth:CGFloat = 0.5
 
 public typealias ZYActionAlertCompletionClosure = (_ isCancle:Bool,Int) -> Void
 
@@ -46,11 +46,11 @@ open class ZYCustomActionAlert: BaseAlertView {
         titleLabel.text = title
         titleLabel.backgroundColor = .clear
         titleLabel.textColor = .black
-        titleLabel.textAlignment = .center;
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 17);
-        titleLabel.lineBreakMode = .byWordWrapping;
-        titleLabel.frame = adjustLabelFrameHeight(label: titleLabel);
-        titleLabel.numberOfLines = 0;
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.frame = adjustLabelFrameHeight(label: titleLabel)
+        titleLabel.numberOfLines = 0
         
         
         if title != nil && (title?.characters.count)! > 0 {
@@ -63,11 +63,11 @@ open class ZYCustomActionAlert: BaseAlertView {
         messageLabel.text = message
         messageLabel.backgroundColor = .clear
         messageLabel.textColor = .black
-        messageLabel.textAlignment = .center;
-        messageLabel.font = UIFont.systemFont(ofSize: 15);
-        messageLabel.lineBreakMode = .byWordWrapping;
-        messageLabel.frame = adjustLabelFrameHeight(label: messageLabel);
-        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 15)
+        messageLabel.lineBreakMode = .byWordWrapping
+        messageLabel.frame = adjustLabelFrameHeight(label: messageLabel)
+        messageLabel.numberOfLines = 0
         if message != nil && (message?.characters.count)!>0 {
             self.addSubview(messageLabel)
         }
@@ -174,16 +174,16 @@ open class ZYCustomActionAlert: BaseAlertView {
                 cancelButton.frame = CGRect(x: 0, y: self.buttonsY!, width: AlertViewWidth, height: AlertViewButtonHeight)
             }
             let lastButtonYOffset = lastButton.frame.origin.y + AlertViewButtonHeight
-            button.frame = CGRect(x: 0,y: lastButtonYOffset,width: AlertViewWidth,height: AlertViewButtonHeight);
+            button.frame = CGRect(x: 0,y: lastButtonYOffset,width: AlertViewWidth,height: AlertViewButtonHeight)
             
         }else{
-            verticalLine = setLineLayer();
-            verticalLine?.frame = CGRect(x: AlertViewWidth/2,y: self.buttonsY!,width: AlertViewLineLayerWidth,height: AlertViewButtonHeight);
+            verticalLine = setLineLayer()
+            verticalLine?.frame = CGRect(x: AlertViewWidth/2,y: self.buttonsY!,width: AlertViewLineLayerWidth,height: AlertViewButtonHeight)
             self.layer.addSublayer(verticalLine!)
-            button.frame = CGRect(x: AlertViewWidth/2,y: self.buttonsY!,width: AlertViewWidth/2,height: AlertViewButtonHeight);
-            otherButton = button;
-            cancelButton.frame = CGRect(x: 0,y: buttonsY!,width: AlertViewWidth/2,height: AlertViewButtonHeight);
-            cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 17);
+            button.frame = CGRect(x: AlertViewWidth/2,y: self.buttonsY!,width: AlertViewWidth/2,height: AlertViewButtonHeight)
+            otherButton = button
+            cancelButton.frame = CGRect(x: 0,y: buttonsY!,width: AlertViewWidth/2,height: AlertViewButtonHeight)
+            cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         }
         self.addSubview(button)
         if buttons != nil {
@@ -222,15 +222,15 @@ open class ZYCustomActionAlert: BaseAlertView {
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.titleLabel?.adjustsFontSizeToFitWidth = true;
-        button.titleEdgeInsets = UIEdgeInsetsMake(2, 2, 2, 2);
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleEdgeInsets = UIEdgeInsetsMake(2, 2, 2, 2)
         button.setTitleColor(.lightGray, for: .normal)
         button.setTitleColor(UIColor.init(white: 0.25, alpha: 1), for: .highlighted)
         button.addTarget(self, action: #selector(dismiss(btn:)), for: .touchUpInside)
         button.addTarget(self, action: #selector(setBackgroundColorForButton(btn:)), for: .touchDown)
         button.addTarget(self, action: #selector(setBackgroundColorForButton(btn:)), for: .touchDragEnter)
         button.addTarget(self, action: #selector(clearBackgroundColorForButton(btn:)), for: .touchDragExit)
-        return button;
+        return button
     }
     
     func setBackgroundColorForButton(btn:UIButton) {
@@ -294,12 +294,12 @@ open class ZYCustomActionAlert: BaseAlertView {
         otherButton.setTitleColor(color, for: .normal)
     }
     public func setAlertTitleColor(_ color:UIColor,titleFont font:UIFont) {
-        titleLabel.textColor=color;
-        titleLabel.font=font;
+        titleLabel.textColor=color
+        titleLabel.font=font
     }
     public func setAlertMessageColor(_ color:UIColor,messageFont font:UIFont)  {
-        messageLabel.textColor=color;
-        messageLabel.font=font;
+        messageLabel.textColor=color
+        messageLabel.font=font
     }
     public func setAlertCancleTitleColor(_ color:UIColor,titleFont font:UIFont) {
         cancelButton.setTitleColor(color, for: .normal)

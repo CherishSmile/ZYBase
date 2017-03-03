@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        setBarAttribute(.blue, .brown, .cyan, .white)
+        setBarAttribute(.blue, .white, .black, .white)
         RootManager.shareManager.creatRootVC(window!, [DemoVC.self,SetVC.self], ["示例","设置"], [#imageLiteral(resourceName: "tab_unselect_demo"),#imageLiteral(resourceName: "tab_unselect_set")], [#imageLiteral(resourceName: "tab_select_demo"),#imageLiteral(resourceName: "tab_select_set")])
         
         return true

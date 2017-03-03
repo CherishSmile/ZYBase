@@ -35,12 +35,7 @@ class SetVC: BaseVC ,UITableViewDataSource,UITableViewDelegate{
         // Do any additional setup after loading the view.
     }
     @objc private func itemClick()  {
-        let scanVC = LBXScanViewController()
-        scanVC.scanStyle = ScanViewStyle(.AliPayScan)
-        scanVC.resultClass = ResultViewController.self
-        scanVC.isOpenInterestRect = true
-        scanVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(scanVC, animated: true)
+       
     }
 
     @objc private func rightClick()  {

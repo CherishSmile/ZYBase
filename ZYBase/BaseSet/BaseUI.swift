@@ -230,9 +230,7 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
     var scanStyle = LBXScanViewStyle()
     switch style {
     case .AliPayScan:
-        scanStyle.centerUpOffset = getPointByPixelH(120)
-        scanStyle.xScanRetangleOffset = getPointByPixelH(60)
-        
+        scanStyle.centerUpOffset = getPointByPixelH(120)        
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
         scanStyle.photoframeLineW = 2.0;
         scanStyle.photoframeAngleW = 16;
@@ -240,7 +238,7 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.color_NotRecoginitonArea = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.4)
         scanStyle.isNeedShowRetangle = false;
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.NetGrid;
-        scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_full_net", ofType: "png")!)
+        scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_full_net@2x", ofType: "png")!)
         
     case .WechatScan:
         scanStyle.centerUpOffset = getPointByPixelH(88);
@@ -251,7 +249,8 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.isNeedShowRetangle = false;
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.LineMove;
         scanStyle.colorAngle = UIColor(red: 0.0/255, green: 200.0/255.0, blue: 20.0/255.0, alpha: 1.0)
-        scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_Scan_weixin_Line", ofType: "png")!)
+        
+        scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_Scan_weixin_Line@2x", ofType: "png")!)
     case .BarCodeScan:
         scanStyle.centerUpOffset = getPointByPixelH(88);
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
@@ -260,7 +259,7 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.photoframeAngleH = 16;
         scanStyle.isNeedShowRetangle = false;
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.LineStill;
-        scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_light_green", ofType: "png")!)
+        scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_light_green@2x", ofType: "png")!)
         //非正方形
         //设置矩形宽高比
         scanStyle.whRatio = 4.3/2.18;

@@ -13,10 +13,12 @@ open class BaseVC: UIViewController {
 
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.backgroundColor = .white
-                
+        
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+
         // Do any additional setup after loading the view.
     }
-
     override  open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

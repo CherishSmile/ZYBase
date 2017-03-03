@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 import AVFoundation
 
-open class LBXResultVC: BaseVC {
-    open var result : LBXScanResult?
+public protocol LBXResultDelegate : NSObjectProtocol {
+    func LBXResultHandle(result:LBXScanResult)
 }
 
 open class LBXScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -23,6 +23,8 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
    open var qRScanView: LBXScanView?
     
    open var resultClass : AnyClass?
+    
+    public var resultDelegate : LBXResultDelegate?
 
     
     //启动区域识别功能
@@ -137,24 +139,11 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         }
         
         let result:LBXScanResult = arrayResult[0]
-        skipToResultVC(result: result)
-
-//        showMsg(title: result.strBarCodeType, message: result.strScanned)
+        
+       resultDelegate?.LBXResultHandle(result: result)
+    
     }
-    ///扫码结果跳转，如果继承本控制器，可以重写此方法，以实现跳转
-    open func skipToResultVC(result:LBXScanResult)  {
-        if let skipVC = resultClass {
-            let vccls = skipVC as! LBXResultVC.Type
-            let vc = vccls.init()
-            vc.title = "扫描结果"
-            vc.result = result
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else{
-            showMsg(title: result.strBarCodeType, message: result.strScanned)
-        }
-    }
-
+    
     override open func viewWillDisappear(_ animated: Bool) {
         
         NSObject.cancelPreviousPerformRequests(withTarget: self)

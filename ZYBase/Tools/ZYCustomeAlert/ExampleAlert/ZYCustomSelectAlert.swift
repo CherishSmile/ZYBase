@@ -15,7 +15,7 @@ open class ZYCustomSelectAlert: BaseAlertView,UITableViewDelegate,UITableViewDat
     public var completion : ZYSelectAlertCompletionClosure?
 
     lazy var selectTab: UITableView = {
-        let tab = UITableView(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH-100, height: CGFloat(self.titleArr.count*30)), style: .plain)
+        let tab = UITableView(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH-100, height: CGFloat(self.titleArr.count)*getPointByPixelH(80)), style: .plain)
         tab.backgroundColor = .white
         tab.layer.masksToBounds = true
         tab.layer.cornerRadius = 4.0
@@ -30,7 +30,7 @@ open class ZYCustomSelectAlert: BaseAlertView,UITableViewDelegate,UITableViewDat
         self.completion = completion
         titleArr = selectTitles
         titleArr.insert(title, at: 0)
-        self.frame = CGRect(x: 50, y: (SCREEN_HEIGHT-CGFloat(titleArr.count*30))/2, width: SCREEN_WIDTH-100, height: CGFloat(titleArr.count*30))
+        self.frame = CGRect(x: 50, y: (SCREEN_HEIGHT-CGFloat(self.titleArr.count)*getPointByPixelH(80))/2, width: SCREEN_WIDTH-100, height: CGFloat(self.titleArr.count)*getPointByPixelH(80))
         self.addSubview(selectTab)
     }
     
@@ -55,7 +55,7 @@ open class ZYCustomSelectAlert: BaseAlertView,UITableViewDelegate,UITableViewDat
             cell?.textLabel?.textColor = .blue;
         }
         cell?.textLabel?.text = titleArr[indexPath.row]
-        cell?.textLabel?.font = getFont(14)
+        cell?.textLabel?.font = getFont(getPointByPixelW(30))
         return cell!
     }
     
@@ -69,7 +69,7 @@ open class ZYCustomSelectAlert: BaseAlertView,UITableViewDelegate,UITableViewDat
         }
     }
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
+        return getPointByPixelH(80)
     }
 
     

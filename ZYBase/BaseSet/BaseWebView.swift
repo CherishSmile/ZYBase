@@ -34,8 +34,8 @@ open class BaseWebView: WKWebView {
     
     func initWebSet() {
         self.backgroundColor = UIColor.white
-        self.scrollView.bounces = false
-        self.scrollView.bouncesZoom = false
+//        self.scrollView.bounces = false
+//        self.scrollView.bouncesZoom = false
     }
     
     required public init?(coder: NSCoder) {

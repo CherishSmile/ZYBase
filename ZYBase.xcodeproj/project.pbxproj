@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		350D47E21E652997001B0C77 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D47E11E652997001B0C77 /* WebVC.swift */; };
 		350D47EA1E657F80001B0C77 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 350D47E91E657F80001B0C77 /* index.html */; };
+		356F35651E6949650068D121 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 356F35641E6949650068D121 /* CodeScan.bundle */; };
+		356F35671E6971720068D121 /* ScanResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F35661E6971720068D121 /* ScanResultVC.swift */; };
 		3574AE651E56FEEC00B281C8 /* BaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */; };
 		357553261E4817C5005A0755 /* ZYBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553241E4817C5005A0755 /* ZYBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		357553B61E481804005A0755 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532D1E481803005A0755 /* BaseAlertView.swift */; };
@@ -16,7 +18,6 @@
 		357553B81E481804005A0755 /* BaseUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532F1E481803005A0755 /* BaseUI.swift */; };
 		357553B91E481804005A0755 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357553301E481803005A0755 /* BaseVC.swift */; };
 		357553BA1E481804005A0755 /* RootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357553311E481803005A0755 /* RootManager.swift */; };
-		357553E51E481804005A0755 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3575536A1E481803005A0755 /* CodeScan.bundle */; };
 		357553E61E481804005A0755 /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575536B1E481803005A0755 /* LBXPermissions.swift */; };
 		357553E71E481804005A0755 /* LBXScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575536C1E481803005A0755 /* LBXScanLineAnimation.swift */; };
 		357553E81E481804005A0755 /* LBXScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575536D1E481803005A0755 /* LBXScanNetAnimation.swift */; };
@@ -50,7 +51,6 @@
 		3575543C1E4818B7005A0755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3575543A1E4818B7005A0755 /* LaunchScreen.storyboard */; };
 		357554601E48194A005A0755 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357554551E48194A005A0755 /* ChatModel.swift */; };
 		357554611E48194A005A0755 /* MyQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357554561E48194A005A0755 /* MyQRCodeViewController.swift */; };
-		357554621E48194A005A0755 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357554571E48194A005A0755 /* ResultViewController.swift */; };
 		357554631E48194A005A0755 /* TestAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357554581E48194A005A0755 /* TestAlertView.swift */; };
 		357554641E48194A005A0755 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357554591E48194A005A0755 /* TestModel.swift */; };
 		357554651E48194A005A0755 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575545A1E48194A005A0755 /* TestTableViewCell.swift */; };
@@ -159,6 +159,8 @@
 /* Begin PBXFileReference section */
 		350D47E11E652997001B0C77 /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		350D47E91E657F80001B0C77 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		356F35641E6949650068D121 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		356F35661E6971720068D121 /* ScanResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultVC.swift; sourceTree = "<group>"; };
 		3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebVC.swift; sourceTree = "<group>"; };
 		357553211E4817C5005A0755 /* ZYBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZYBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		357553241E4817C5005A0755 /* ZYBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBase.h; sourceTree = "<group>"; };
@@ -170,7 +172,6 @@
 		357553311E481803005A0755 /* RootManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootManager.swift; sourceTree = "<group>"; };
 		357553341E481803005A0755 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
 		3575534D1E481803005A0755 /* Kingfisher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Kingfisher.xcodeproj; sourceTree = "<group>"; };
-		3575536A1E481803005A0755 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		3575536B1E481803005A0755 /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
 		3575536C1E481803005A0755 /* LBXScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanLineAnimation.swift; sourceTree = "<group>"; };
 		3575536D1E481803005A0755 /* LBXScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanNetAnimation.swift; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		3575543D1E4818B7005A0755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357554551E48194A005A0755 /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		357554561E48194A005A0755 /* MyQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQRCodeViewController.swift; sourceTree = "<group>"; };
-		357554571E48194A005A0755 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		357554581E48194A005A0755 /* TestAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAlertView.swift; sourceTree = "<group>"; };
 		357554591E48194A005A0755 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		3575545A1E48194A005A0755 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 		357553691E481803005A0755 /* LBXScan */ = {
 			isa = PBXGroup;
 			children = (
-				3575536A1E481803005A0755 /* CodeScan.bundle */,
+				356F35641E6949650068D121 /* CodeScan.bundle */,
 				3575536B1E481803005A0755 /* LBXPermissions.swift */,
 				3575536C1E481803005A0755 /* LBXScanLineAnimation.swift */,
 				3575536D1E481803005A0755 /* LBXScanNetAnimation.swift */,
@@ -496,7 +496,6 @@
 				3575545D1E48194A005A0755 /* ViewController3.swift */,
 				3575545E1E48194A005A0755 /* ViewController4.swift */,
 				357554561E48194A005A0755 /* MyQRCodeViewController.swift */,
-				357554571E48194A005A0755 /* ResultViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -603,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				3578F8111E6023120003E21E /* ScanVC.swift */,
+				356F35661E6971720068D121 /* ScanResultVC.swift */,
 			);
 			name = ScanDemo;
 			sourceTree = "<group>";
@@ -779,7 +779,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				357553E51E481804005A0755 /* CodeScan.bundle in Resources */,
+				356F35651E6949650068D121 /* CodeScan.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,8 +849,8 @@
 				3578F8161E6023500003E21E /* AorKDemoVC.swift in Sources */,
 				357554681E48194A005A0755 /* ViewController3.swift in Sources */,
 				357554661E48194A005A0755 /* SetVC.swift in Sources */,
-				357554621E48194A005A0755 /* ResultViewController.swift in Sources */,
 				357554631E48194A005A0755 /* TestAlertView.swift in Sources */,
+				356F35671E6971720068D121 /* ScanResultVC.swift in Sources */,
 				357554341E4818B7005A0755 /* DemoVC.swift in Sources */,
 				3578F8141E6023280003E21E /* AutoCellHightVC.swift in Sources */,
 				350D47E21E652997001B0C77 /* WebVC.swift in Sources */,

@@ -10,8 +10,8 @@ import UIKit
 import Kingfisher
 private let ZYActionCellID = "ZYActionCellID"
 
-private let AlertViewCellHeight:CGFloat = 40.0;
-private let AlertViewHeaderHeight:CGFloat = 5.0;
+private let AlertViewCellHeight:CGFloat = getPointByPixelW(80);
+private let AlertViewHeaderHeight:CGFloat = getPointByPixelH(10);
 
 public typealias ZYActionSheetCompletionClosure = (_ isCancle:Bool,Int) -> Void
 
@@ -28,7 +28,7 @@ open class ZYActionModel: NSObject {
         name = title
         
         nameColor = .black
-        nameFont = getFont(15)
+        nameFont = getFont(getPointByPixelW(30))
     }
 }
 
@@ -50,7 +50,7 @@ open class ZYActionCell: UITableViewCell {
             make.centerY.centerX.width.height.equalToSuperview()
         })
         titleBtn.isUserInteractionEnabled = false
-        titleBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: 5)
+        titleBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -getPointByPixelW(10), bottom: 0, right: getPointByPixelW(10))
     }
     
     func configData(model:ZYActionModel) {
@@ -89,7 +89,8 @@ open class ZYCustomActionSheet: BaseAlertView,UITableViewDelegate,UITableViewDat
         dataArr.append(titleArr)
         dataArr.append([cancleTitle])
         
-        let height:CGFloat = CGFloat((dataArr.first?.count)!*40+(dataArr.last?.count)!*40+5)
+        let height:CGFloat = CGFloat((dataArr.first?.count)!)*AlertViewCellHeight+CGFloat((dataArr.last?.count)!)*AlertViewCellHeight+AlertViewHeaderHeight
+        
         self.frame = CGRect(x: 0, y: SCREEN_HEIGHT-height, width: SCREEN_WIDTH, height: height)
         
         initActionTab()
@@ -123,7 +124,7 @@ open class ZYCustomActionSheet: BaseAlertView,UITableViewDelegate,UITableViewDat
     
     //MARK: - 创建ActionTabView
     func initActionTab(){
-        let tabHeight:CGFloat = CGFloat((dataArr.first?.count)!*40+(dataArr.last?.count)!*40+5)
+        let tabHeight:CGFloat = CGFloat((dataArr.first?.count)!)*AlertViewCellHeight+CGFloat((dataArr.last?.count)!)*AlertViewCellHeight+AlertViewHeaderHeight
         let rect = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: tabHeight)
         actionTab = UITableView(frame:rect, style: .plain)
         actionTab.backgroundColor = .clear
