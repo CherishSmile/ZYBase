@@ -545,8 +545,8 @@
 		3592611F1E69020E0082575E /* BrowserDemo */ = {
 			isa = PBXGroup;
 			children = (
-				359261201E6910E40082575E /* KINWebBrowser */,
 				3575545C1E48194A005A0755 /* BrowserVC.swift */,
+				359261201E6910E40082575E /* KINWebBrowser */,
 			);
 			name = BrowserDemo;
 			sourceTree = "<group>";
