@@ -23,7 +23,7 @@ class CustomAlertVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         typeTab = creatTabView(self, .plain, { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(NAV_HEIGHT)
-            make.bottom.equalTo(-TOOLBAR_HEIGHT)
+            make.bottom.equalToSuperview()
         })
         typeTab.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cellID")
         

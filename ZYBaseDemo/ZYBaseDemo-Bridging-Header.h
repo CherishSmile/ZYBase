@@ -12,4 +12,5 @@
 @import ZYBase;
 @import Kingfisher;
 @import SnapKit;
+#import "KINWebBrowserViewController.h"
 #endif /* ZYBaseDemo_Bridging_Header_h */

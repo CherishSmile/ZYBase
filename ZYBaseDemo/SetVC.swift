@@ -13,7 +13,7 @@ private let shortContent = "使用UILable时，若不指定preferredMaxLayoutWid
 private let longContent = "使用UILable时，若不指定preferredMaxLayoutWidth属性，则计算会不准备，使用Masonry时，指定此属性;\n-------------------------------\n是特别适配iOS6的，不过使用SnapKit则必须指定，否则自动计算的高度会不准确\n-------------------------------\n在最后一定要调用这个方法：setAutoCellHeightCondition(myself: UITableViewCell, lastView: UIView, bottomOffset: CGFloat)\n否则计算不准确，或者调用\nhyb_lastViewInCell，hyb_bottomOffsetToCell\n-------------------------------\n在tabview设置高度的方法里，这样写便可准确计算处高度\nreturn TestCell.hyb_cellHeight(forTableView: tableView, config: { (cell) -> Void in\n\tlet itemCell = cell as? TestCell\n\titemCell?.config(testModel: model)\n},updateCacheIfNeeded: { () -> (key: String, stateKey: String, shouldUpdate: Bool) in\n\treturn (String(model.modelId), stateKey, false)\n})\n-------------------------------"
 
 
-class ViewController1: BaseVC ,UITableViewDataSource,UITableViewDelegate{
+class SetVC: BaseVC ,UITableViewDataSource,UITableViewDelegate{
 
     fileprivate var tab:UITableView!
     fileprivate var arr:Array<TestModel> = []

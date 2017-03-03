@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DemoVC.swift
 //  BaseDemo
 //
 //  Created by Mzywx on 2016/12/21.
@@ -7,7 +7,7 @@
 //
 
 import ZYBase
-class ViewController: BaseVC,UITableViewDelegate,UITableViewDataSource{
+class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
 
     
     fileprivate var demoTab : UITableView!
@@ -17,6 +17,10 @@ class ViewController: BaseVC,UITableViewDelegate,UITableViewDataSource{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "browser").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(itemClick))
+        
         
         vcArr = ["BadgeNumberVC","CustomAlertVC","ScanVC","AutoCellHightVC","AorKDemoVC","WKWebVC"]
         
@@ -30,7 +34,11 @@ class ViewController: BaseVC,UITableViewDelegate,UITableViewDataSource{
         })
         
     }
-
+    @objc private func itemClick() {
+        let browserVC = BrowserVC()
+        let browerNav = UINavigationController(rootViewController: browserVC)
+        self.present(browerNav, animated: true, completion: nil)
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -60,11 +68,7 @@ class ViewController: BaseVC,UITableViewDelegate,UITableViewDataSource{
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
-    @objc private func itemClick() {
-        let alertView = TestAlertView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH-100, height: 100))
-        alertView.center = self.view.center
-        alertView.show()
-    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -22,7 +22,7 @@ class WKWebVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         webTab = creatTabView(self, .plain, { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(NAV_HEIGHT)
-            make.bottom.equalTo(-TOOLBAR_HEIGHT)
+            make.bottom.equalToSuperview()
         })
         
         // Do any additional setup after loading the view.

@@ -52,7 +52,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
         baseWeb = BaseWebView.init(superView: self.view, configuration: config, layout: { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(NAV_HEIGHT)
-            make.bottom.equalTo(-TOOLBAR_HEIGHT)
+            make.bottom.equalTo(self.tabBarController?.tabBar.isHidden == true ? 0 : -TOOLBAR_HEIGHT)
         })
         baseWeb.uiDelegate = self
         baseWeb.navigationDelegate = self
