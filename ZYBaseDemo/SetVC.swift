@@ -15,92 +15,68 @@ private let longContent = "使用UILable时，若不指定preferredMaxLayoutWidt
 
 class SetVC: BaseVC ,UITableViewDataSource,UITableViewDelegate{
 
-    fileprivate var tab:UITableView!
-    fileprivate var arr:Array<TestModel> = []
+    fileprivate var setTab:UITableView!
+    fileprivate var setArr:Array<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBarItem(self, "扫一扫", .orange, #selector(itemClick), false)
-        setRightItem(self, "我的二维码", .green, #selector(rightClick))
-        
-        self.dataInit()
-        tab = creatTabView(self, .grouped)
-        tab.register(TestTableViewCell.self, forCellReuseIdentifier: "TestTableViewCellID")
-        tab.snp.makeConstraints { (make) in
+        setArr = ["清理缓存"]
+        setTab = creatTabView(self, .plain, { (make) in
             make.top.equalTo(NAV_HEIGHT)
             make.left.right.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-TOOLBAR_HEIGHT)
-        }
-        // Do any additional setup after loading the view.
-    }
-    @objc private func itemClick()  {
-       
-    }
-
-    @objc private func rightClick()  {
+            make.bottom.equalTo(-TOOLBAR_HEIGHT)
+        })
         
-        
-        let QRVC = MyQRCodeViewController()
-        QRVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(QRVC, animated: true)
-        
-        
-    }
-    func dataInit()  {
-        
-        
-        for i in 0..<20 {
-            let model = TestModel()
-            if i%2 == 0 {
-                model.content = shortContent
-                model.isExpend = false
-
-            }else{
-                model.content = longContent
-                model.isExpend = true
-            }
-            arr.append(model)
-        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return setArr.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TestTableViewCellID", for: indexPath) as! TestTableViewCell
-        cell.configData(model: arr[indexPath.row])
-        cell.selectionStyle = .none
-        cell.expendSure = {
-            let model = self.arr[indexPath.row]
-            model.isExpend = !model.isExpend!
-            model.content = model.isExpend! ? longContent : shortContent
-            self.tab.reloadData()
+        var cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCellID")
+        if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCellID")
         }
-        return cell
-        
+        cell?.textLabel?.text = setArr[indexPath.row]
+        cell?.detailTextLabel?.text = byteSizeConversion(Bsize: calculateCacheSize())
+        return cell!
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return TestTableViewCell.ZY_cellHeight(forTableView: tableView, config: { (cell) in
-            let itemCell  = cell as? TestTableViewCell
-            itemCell?.configData(model: self.arr[indexPath.row])
-        }, updateCacheIfNeeded: nil)
-    }
+   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0  {
+            ZYFileManager.clearTmpDirectory()
+            ZYFileManager.clearCachesDirectory()
+            if ZYFileManager.isExists(atPath: ZYFileManager.libraryDir()+"/Cookies") {
+                ZYFileManager.removeDirectory(atPath: ZYFileManager.libraryDir()+"/Cookies")
+            }
+            if ZYFileManager.isExists(atPath: ZYFileManager.libraryDir()+"/WebKit") {
+                ZYFileManager.removeDirectory(atPath: ZYFileManager.libraryDir()+"/WebKit")
+            }
+            setTab.reloadData()
+        }
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+    
+    
+    func calculateCacheSize() -> Float {
+        let tmpSize = ZYFileManager.sizeOfDirectory(atPath: ZYFileManager.tmpDir()).floatValue
+        let libSize = ZYFileManager.sizeOfDirectory(atPath: ZYFileManager.libraryDir()).floatValue
+        let preSize = ZYFileManager.sizeOfDirectory(atPath: ZYFileManager.preferencesDir()).floatValue
+        return tmpSize + libSize - preSize
     }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTab.reloadData()
     }
     
 

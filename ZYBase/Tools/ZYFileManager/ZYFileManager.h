@@ -87,6 +87,8 @@
 + (NSDate *)modificationDateOfItemAtPath:(NSString *)path error:(NSError **)error;
 
 #pragma mark - 删除文件(夹)
+// 删除指定文件夹
++ (BOOL)removeDirectoryAtPath:(NSString *)folder;
 // 删除文件
 + (BOOL)removeItemAtPath:(NSString *)path;
 // 删除文件(错误信息error)

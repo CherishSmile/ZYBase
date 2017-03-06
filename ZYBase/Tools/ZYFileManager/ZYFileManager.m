@@ -182,6 +182,15 @@
 }
 
 #pragma mark - 删除文件(夹)
++ (BOOL)removeDirectoryAtPath:(NSString *)path{
+    NSArray *subFiles = [self listFilesInDirectoryAtPath:path deep:NO];
+    BOOL isSuccess = YES;
+    for (NSString *file in subFiles) {
+        NSString *absolutePath = [path stringByAppendingPathComponent:file];
+        isSuccess &= [self removeItemAtPath:absolutePath];
+    }
+    return isSuccess;
+}
 + (BOOL)removeItemAtPath:(NSString *)path {
     return [self removeItemAtPath:path error:nil];
 }

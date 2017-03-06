@@ -57,6 +57,7 @@ open class ZYActionCell: UITableViewCell {
         if let imageStr = model.leftImage {
             if imageStr.hasPrefix("http://") || imageStr.hasPrefix("https://") {
                 titleBtn.kf.setImage(with:  URL(string: imageStr), for: .normal)
+                
             }else{
                 titleBtn.setImage(getImage(imageStr)?.withRenderingMode(.alwaysOriginal), for: .normal)
             }

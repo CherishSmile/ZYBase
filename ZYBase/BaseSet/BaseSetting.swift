@@ -9,6 +9,8 @@
 import CoreLocation
 import UIKit
 import Foundation
+import WebKit
+import Kingfisher
 ///设备屏幕尺寸
 public let SCREEN_NAVWIDTH=UIScreen.main.nativeBounds.size.width
 public let SCREEN_NAVHEIGHT=UIScreen.main.nativeBounds.size.height
@@ -385,15 +387,58 @@ public func classFromString(_ className:String) -> UIViewController?{
     return vc
 }
 
+/**
+ *  清除WKWebview的缓存
+ */
+public func clearWKWebCache(){
+    if #available(iOS 9.0, *) {
+        let websiteDataTypes:Set<String> = NSSet(array: [WKWebsiteDataTypeMemoryCache,WKWebsiteDataTypeDiskCache]) as! Set<String>
+        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes, modifiedSince: Date.init(timeIntervalSince1970: 0), completionHandler: {
+            printLog("clear success")
+        })
+    } else {
+        let libPath = ZYFileManager.libraryDir()
+        if let path = libPath {
+            let cookiesFolderPath = path + "/Cookies"
+            do {
+                try  FileManager.default.removeItem(atPath: cookiesFolderPath)
+            } catch  {
+                printLog(error)
+            }
+        }
+    }
+}
+/**
+ *  清除Kingfisher的缓存
+ */
+public func clearKingfisherCache() {
+    let kfCache = KingfisherManager.shared.cache
+    kfCache.clearDiskCache()
+    kfCache.clearMemoryCache()
+    kfCache.cleanExpiredDiskCache()
+}
+/**
+ *  字节转换
+ */
+public func byteSizeConversion(Bsize:Float) -> String {
+    var size : String
+    if Bsize < 1024 {
+        size = String(format: "%.0f字节",Bsize)
+    }else if(Bsize < 1024*1024){
+        size = String(format: "%.2fK",Bsize/1024.0)
+    }else if(Bsize < 1024*1024*1024){
+        size = String(format: "%.2fM",Bsize/1024.0/1024.0)
+    }else{
+        size = String(format: "%.2fG",Bsize/1024.0/1024.0/1024.0)
+    }
+    return size
+}
 
-/// 完整的url
-///
-/// - Parameters:
-///   - hostUrl: 服务器域名
-///   - uri: url
-/// - Returns: 完整的url
+
+/**
+ *  完整的url
+ */
 public func requestUrl(_ hostUrl:String,_ uri:String) -> String {
     return hostUrl+uri
 }
-
 

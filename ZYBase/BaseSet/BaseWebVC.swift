@@ -208,6 +208,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     deinit {
         if shouldShowProgress {
             baseWeb.removeObserver(self, forKeyPath: WEBPROGRESS)
+            self.navigationController?.finishSGProgress()
         }
         if isUseWebPageTitle {
             baseWeb.removeObserver(self, forKeyPath: WEBTITLE)
