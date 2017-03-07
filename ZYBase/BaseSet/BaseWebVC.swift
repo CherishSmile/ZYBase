@@ -56,7 +56,6 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
     
     open func initWebView()  {
@@ -68,6 +67,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
         })
         baseWeb.uiDelegate = self
         baseWeb.navigationDelegate = self
+    
     }
     
     /**
@@ -118,7 +118,8 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == WEBPROGRESS {
             if object as? WKWebView == baseWeb {
-                self.navigationController?.setSGProgressPercentage(Float((baseWeb.estimatedProgress)*100), andTintColor: UIColor.cyan)
+                self.navigationController?.setSGProgressPercentage(Float(baseWeb.estimatedProgress)*100, andTintColor: .blue)
+                printLog(baseWeb.estimatedProgress)
             }else{
                 super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
             }
@@ -198,6 +199,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.navigationController?.hiddenSGProgress()
         if let names = jsNameArr {
             for jsString in names {
                 baseWeb.configuration.userContentController.removeScriptMessageHandler(forName: jsString)
@@ -208,7 +210,6 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     deinit {
         if shouldShowProgress {
             baseWeb.removeObserver(self, forKeyPath: WEBPROGRESS)
-            self.navigationController?.finishSGProgress()
         }
         if isUseWebPageTitle {
             baseWeb.removeObserver(self, forKeyPath: WEBTITLE)

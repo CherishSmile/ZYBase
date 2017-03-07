@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 public enum  ScanStyle:Int {
+    case QQScan
     case AliPayScan
     case WechatScan
     case BarCodeScan
@@ -229,6 +230,9 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
     
     var scanStyle = LBXScanViewStyle()
     switch style {
+    case .QQScan:
+        scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_light_green@2x", ofType: "png")!)
+        
     case .AliPayScan:
         scanStyle.centerUpOffset = getPointByPixelH(120)        
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
@@ -303,6 +307,15 @@ public func creatCode(_ codeType:CodeStyle,_ codeString:String,_ size:CGSize,_ Q
         return barCodeImage
     }
 }
-
-
+/**
+ *  获取framework内部bundle图片
+ */
+public func getBundleImage(name:String,type:String) -> UIImage? {
+    let bundle = Bundle(for: BaseVC.self)
+    let imagePath =  bundle.path(forResource: name, ofType: type)
+    if let path = imagePath {
+        return  UIImage(contentsOfFile: path)
+    }
+    return nil
+}
 

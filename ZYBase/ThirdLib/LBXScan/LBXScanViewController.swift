@@ -170,10 +170,8 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         
         present(picker, animated: true, completion: nil)
     }
-    
     //MARK: -----相册选择图片识别二维码 （条形码没有找到系统方法）
-    @nonobjc open func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-    {
+    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
         
         var image:UIImage? = info[UIImagePickerControllerEditedImage] as? UIImage
@@ -192,10 +190,10 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
                 return
             }
         }
-      
+        
         showMsg(title: "", message: "识别失败")
     }
-    
+        
     func showMsg(title:String?,message:String?)
     {
         if LBXScanWrapper.isSysIos8Later()

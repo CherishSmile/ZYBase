@@ -11,6 +11,7 @@
 		350D47EA1E657F80001B0C77 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 350D47E91E657F80001B0C77 /* index.html */; };
 		356F35651E6949650068D121 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 356F35641E6949650068D121 /* CodeScan.bundle */; };
 		356F35671E6971720068D121 /* ScanResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F35661E6971720068D121 /* ScanResultVC.swift */; };
+		357301AD1E6E871900976932 /* QQScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357301AC1E6E871900976932 /* QQScanVC.swift */; };
 		3574AE651E56FEEC00B281C8 /* BaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */; };
 		357553261E4817C5005A0755 /* ZYBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553241E4817C5005A0755 /* ZYBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		357553B61E481804005A0755 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532D1E481803005A0755 /* BaseAlertView.swift */; };
@@ -161,6 +162,7 @@
 		350D47E91E657F80001B0C77 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		356F35641E6949650068D121 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		356F35661E6971720068D121 /* ScanResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultVC.swift; sourceTree = "<group>"; };
+		357301AC1E6E871900976932 /* QQScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQScanVC.swift; sourceTree = "<group>"; };
 		3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebVC.swift; sourceTree = "<group>"; };
 		357553211E4817C5005A0755 /* ZYBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZYBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		357553241E4817C5005A0755 /* ZYBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBase.h; sourceTree = "<group>"; };
@@ -207,7 +209,7 @@
 		3575543B1E4818B7005A0755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3575543D1E4818B7005A0755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357554551E48194A005A0755 /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
-		357554561E48194A005A0755 /* MyQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQRCodeViewController.swift; sourceTree = "<group>"; };
+		357554561E48194A005A0755 /* MyQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyQRCodeViewController.swift; path = ../MyQRCodeViewController.swift; sourceTree = "<group>"; };
 		357554581E48194A005A0755 /* TestAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAlertView.swift; sourceTree = "<group>"; };
 		357554591E48194A005A0755 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		3575545A1E48194A005A0755 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
@@ -495,7 +497,6 @@
 				3578F80C1E6021EB0003E21E /* SubVCS */,
 				3575545D1E48194A005A0755 /* ViewController3.swift */,
 				3575545E1E48194A005A0755 /* ViewController4.swift */,
-				357554561E48194A005A0755 /* MyQRCodeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -603,6 +604,8 @@
 			children = (
 				3578F8111E6023120003E21E /* ScanVC.swift */,
 				356F35661E6971720068D121 /* ScanResultVC.swift */,
+				357301AC1E6E871900976932 /* QQScanVC.swift */,
+				357554561E48194A005A0755 /* MyQRCodeViewController.swift */,
 			);
 			name = ScanDemo;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				357554631E48194A005A0755 /* TestAlertView.swift in Sources */,
 				356F35671E6971720068D121 /* ScanResultVC.swift in Sources */,
 				357554341E4818B7005A0755 /* DemoVC.swift in Sources */,
+				357301AD1E6E871900976932 /* QQScanVC.swift in Sources */,
 				3578F8141E6023280003E21E /* AutoCellHightVC.swift in Sources */,
 				350D47E21E652997001B0C77 /* WebVC.swift in Sources */,
 				357554641E48194A005A0755 /* TestModel.swift in Sources */,

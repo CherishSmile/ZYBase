@@ -7,7 +7,7 @@
 //
 
 import ZYBase
-class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
+class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource,LBXResultDelegate{
 
     
     fileprivate var demoTab : UITableView!
@@ -20,6 +20,7 @@ class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
                 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "browser").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(itemClick))
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "scan").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(scanClick))
         
         vcArr = ["BadgeNumberVC","CustomAlertVC","ScanVC","AutoCellHightVC","AorKDemoVC","WKWebVC"]
         
@@ -33,11 +34,30 @@ class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
         })
         
     }
+    func scanClick()  {
+        let scanVC = QQScanVC()
+        scanVC.title = "扫一扫"
+        scanVC.resultDelegate = self
+        scanVC.scanStyle = ScanViewStyle(.QQScan)
+        scanVC.isOpenInterestRect = true
+        scanVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(scanVC, animated: true)
+    }
     @objc private func itemClick() {
         let browserVC = BrowserVC()
         browserVC.loadURLString("http://m.baidu.com")
         let browerNav = UINavigationController(rootViewController: browserVC)
         self.present(browerNav, animated: true, completion: nil)
+    }
+    func LBXResultHandle(result: LBXScanResult) {
+        if let url = result.strScanned {
+            let webVC = ScanResultVC()
+            webVC.isShowProgress = true
+            webVC.isUseWebTitle = true
+            webVC.webloadHtml(urlStr: url)
+            self.navigationController?.pushViewController(webVC, animated: true)
+        }
+
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
