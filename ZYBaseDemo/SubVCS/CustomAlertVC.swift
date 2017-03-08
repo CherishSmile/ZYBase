@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomAlertVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
+class CustomAlertVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
 
     
     fileprivate var typeNameArr : Array<String> = []

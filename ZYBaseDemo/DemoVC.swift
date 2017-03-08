@@ -7,7 +7,7 @@
 //
 
 import ZYBase
-class DemoVC: BaseVC,UITableViewDelegate,UITableViewDataSource,LBXResultDelegate{
+class DemoVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDelegate{
 
     
     fileprivate var demoTab : UITableView!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AutoCellHightVC: BaseVC {
+class AutoCellHightVC: BaseDemoVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

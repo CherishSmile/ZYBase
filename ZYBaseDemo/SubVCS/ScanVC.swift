@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScanVC: BaseVC,UITableViewDelegate,UITableViewDataSource,LBXResultDelegate {
+class ScanVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDelegate {
 
     
     fileprivate var scanTab : UITableView!

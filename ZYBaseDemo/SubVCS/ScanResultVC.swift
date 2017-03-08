@@ -13,7 +13,7 @@ class ScanResultVC: BaseWebVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "扫描结果"
-        setBackItem(self, #selector(backClick), #imageLiteral(resourceName: "backbutton.png"))
+//        setBackItem(self, #selector(backClick), #imageLiteral(resourceName: "backbutton.png"))
         // Do any additional setup after loading the view.
     }
     func backClick() {

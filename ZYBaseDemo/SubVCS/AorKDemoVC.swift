@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AorKDemoVC: BaseVC {
+class AorKDemoVC: BaseDemoVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BadgeNumberVC: BaseVC {
+class BadgeNumberVC: BaseDemoVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

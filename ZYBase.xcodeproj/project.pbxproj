@@ -12,6 +12,7 @@
 		356F35651E6949650068D121 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 356F35641E6949650068D121 /* CodeScan.bundle */; };
 		356F35671E6971720068D121 /* ScanResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F35661E6971720068D121 /* ScanResultVC.swift */; };
 		357301AD1E6E871900976932 /* QQScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357301AC1E6E871900976932 /* QQScanVC.swift */; };
+		35741CDB1E6FD9DA00589C51 /* BaseDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35741CDA1E6FD9DA00589C51 /* BaseDemoVC.swift */; };
 		3574AE651E56FEEC00B281C8 /* BaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */; };
 		357553261E4817C5005A0755 /* ZYBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 357553241E4817C5005A0755 /* ZYBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		357553B61E481804005A0755 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575532D1E481803005A0755 /* BaseAlertView.swift */; };
@@ -57,8 +58,6 @@
 		357554651E48194A005A0755 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575545A1E48194A005A0755 /* TestTableViewCell.swift */; };
 		357554661E48194A005A0755 /* SetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575545B1E48194A005A0755 /* SetVC.swift */; };
 		357554671E48194A005A0755 /* BrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575545C1E48194A005A0755 /* BrowserVC.swift */; };
-		357554681E48194A005A0755 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575545D1E48194A005A0755 /* ViewController3.swift */; };
-		357554691E48194A005A0755 /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3575545E1E48194A005A0755 /* ViewController4.swift */; };
 		357554701E481AD1005A0755 /* ZYBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357553211E4817C5005A0755 /* ZYBase.framework */; };
 		357554711E481AD1005A0755 /* ZYBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357553211E4817C5005A0755 /* ZYBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		357554751E481AF7005A0755 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357554241E481804005A0755 /* Alamofire.framework */; };
@@ -163,6 +162,7 @@
 		356F35641E6949650068D121 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		356F35661E6971720068D121 /* ScanResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultVC.swift; sourceTree = "<group>"; };
 		357301AC1E6E871900976932 /* QQScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQScanVC.swift; sourceTree = "<group>"; };
+		35741CDA1E6FD9DA00589C51 /* BaseDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDemoVC.swift; sourceTree = "<group>"; };
 		3574AE641E56FEEC00B281C8 /* BaseWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebVC.swift; sourceTree = "<group>"; };
 		357553211E4817C5005A0755 /* ZYBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZYBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		357553241E4817C5005A0755 /* ZYBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBase.h; sourceTree = "<group>"; };
@@ -215,8 +215,6 @@
 		3575545A1E48194A005A0755 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		3575545B1E48194A005A0755 /* SetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetVC.swift; sourceTree = "<group>"; };
 		3575545C1E48194A005A0755 /* BrowserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowserVC.swift; path = ../BrowserVC.swift; sourceTree = "<group>"; };
-		3575545D1E48194A005A0755 /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
-		3575545E1E48194A005A0755 /* ViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
 		3575545F1E48194A005A0755 /* ZYBaseDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZYBaseDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		3577B0251E5D92B10029594D /* UINavigationController+SGProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SGProgress.h"; sourceTree = "<group>"; };
 		3577B0261E5D92B10029594D /* UINavigationController+SGProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SGProgress.m"; sourceTree = "<group>"; };
@@ -477,6 +475,7 @@
 			children = (
 				350D47E91E657F80001B0C77 /* index.html */,
 				357554311E4818B7005A0755 /* AppDelegate.swift */,
+				35741CDA1E6FD9DA00589C51 /* BaseDemoVC.swift */,
 				357554811E481C1E005A0755 /* Controllers */,
 				357554821E481C33005A0755 /* Models */,
 				357554831E481C3D005A0755 /* Views */,
@@ -495,8 +494,6 @@
 				357554331E4818B7005A0755 /* DemoVC.swift */,
 				3575545B1E48194A005A0755 /* SetVC.swift */,
 				3578F80C1E6021EB0003E21E /* SubVCS */,
-				3575545D1E48194A005A0755 /* ViewController3.swift */,
-				3575545E1E48194A005A0755 /* ViewController4.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -850,7 +847,6 @@
 				3578F80E1E60220D0003E21E /* BadgeNumberVC.swift in Sources */,
 				3578F8181E6023650003E21E /* WKWebVC.swift in Sources */,
 				3578F8161E6023500003E21E /* AorKDemoVC.swift in Sources */,
-				357554681E48194A005A0755 /* ViewController3.swift in Sources */,
 				357554661E48194A005A0755 /* SetVC.swift in Sources */,
 				357554631E48194A005A0755 /* TestAlertView.swift in Sources */,
 				356F35671E6971720068D121 /* ScanResultVC.swift in Sources */,
@@ -860,8 +856,8 @@
 				350D47E21E652997001B0C77 /* WebVC.swift in Sources */,
 				357554641E48194A005A0755 /* TestModel.swift in Sources */,
 				357554671E48194A005A0755 /* BrowserVC.swift in Sources */,
+				35741CDB1E6FD9DA00589C51 /* BaseDemoVC.swift in Sources */,
 				3578F8101E6023040003E21E /* CustomAlertVC.swift in Sources */,
-				357554691E48194A005A0755 /* ViewController4.swift in Sources */,
 				357554321E4818B7005A0755 /* AppDelegate.swift in Sources */,
 				3578F8121E6023120003E21E /* ScanVC.swift in Sources */,
 				357554651E48194A005A0755 /* TestTableViewCell.swift in Sources */,

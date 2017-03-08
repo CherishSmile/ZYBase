@@ -192,10 +192,11 @@ public func setNavTitle(_ mySelf:UIViewController,_ color:UIColor,_ font:UIFont)
 /**
  *  设置BackItem
  */
-public func setBackItem(_ mySelf:UIViewController,_ action:Selector,_ image:UIImage) {
-    let leftItem = UIBarButtonItem(image: image.withRenderingMode(.alwaysOriginal), style: .plain, target: mySelf, action: action)
-    mySelf.navigationItem.leftBarButtonItem = leftItem
-    
+public func setBackItem(_ title:String,_ image:UIImage) {
+
+    UINavigationBar.appearance().backIndicatorTransitionMaskImage = image.withRenderingMode(.alwaysOriginal)
+    UINavigationBar.appearance().backIndicatorImage = image.withRenderingMode(.alwaysOriginal)
+
 }
 /**
  *  设置BarAttribute

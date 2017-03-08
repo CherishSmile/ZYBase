@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WKWebVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
+class WKWebVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
 
     
     fileprivate var webTab : UITableView!

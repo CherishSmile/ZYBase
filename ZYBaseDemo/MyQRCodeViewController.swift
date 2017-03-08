@@ -9,7 +9,7 @@
 import UIKit
 import ZYBase
 
-class MyQRCodeViewController: BaseVC {
+class MyQRCodeViewController: BaseDemoVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
