@@ -296,17 +296,8 @@ public func isMobileNumber(_ mobileNum:String) -> Bool {
  *  原生打电话
  */
 public func callNumber(_ number:String ,_ vc : UIViewController) {
-    let alert = UIAlertController(title: nil, message: "确定拨打\n\(number)?", preferredStyle: UIAlertControllerStyle.alert)
-    let cancleAction = UIAlertAction(title: "取消", style: .cancel) { (alert) in
-        
-    }
-    let sureAction = UIAlertAction(title: "确定", style: .default) { (alert) in
-        let numberUrl = URL(string: "tel://"+number)
-        UIApplication.shared.openURL(numberUrl!)
-    }
-    alert.addAction(cancleAction)
-    alert.addAction(sureAction)
-    vc.present(alert, animated:true, completion: nil)
+    let numberUrl = URL(string: "tel://"+number)
+    UIApplication.shared.openURL(numberUrl!)
 }
 
 

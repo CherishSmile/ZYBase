@@ -203,7 +203,7 @@ open class ZYCustomActionAlert: BaseAlertView {
         context.minimumScaleFactor = 1.0
         if let content = label.text {
             if content.characters.count>0 {
-                let bounds = content.boundingRect(with: CGSize.init(width: label.frame.size.width, height: CGFloat(FLT_MAX)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:label.font], context: context)
+                let bounds = content.boundingRect(with: CGSize.init(width: label.frame.size.width, height: CGFloat(Float.greatestFiniteMagnitude)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:label.font], context: context)
                 
                 height = bounds.size.height
                 return CGRect(x: label.frame.origin.x, y: label.frame.origin.y, width: label.frame.size.width, height: height )

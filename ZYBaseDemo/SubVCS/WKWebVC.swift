@@ -17,7 +17,7 @@ class WKWebVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        webArr = ["加载远程网页","加载本地网页"]
+        webArr = ["加载远程网页","加载本地网页","HTML示例"]
         
         webTab = creatTabView(self, .plain, { (make) in
             make.left.right.equalToSuperview()
@@ -45,13 +45,21 @@ class WKWebVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webvc = WebVC()
-        if indexPath.row == 0 {
+        
+        switch indexPath.row {
+        case 0:
             webvc.webUrl = "http://www.mzywx.com"
             webvc.loadType = .net
-        }else{
+        case 1:
             webvc.webUrl = "index"
             webvc.loadType = .local
+        case 2:
+            webvc.webUrl = "BallPool"
+            webvc.loadType = .local
+        default: break
+            
         }
+        
         self.navigationController?.pushViewController(webvc, animated: true)
         
     }

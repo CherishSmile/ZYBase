@@ -643,7 +643,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         
         switch (orientation) {
         case UIImageOrientation.left:
-            rotate = M_PI_2;
+            rotate = .pi/2;
             rect = CGRect(x: 0, y: 0, width: image.size.height, height: image.size.width);
             translateX = 0;
             translateY = -rect.size.width;
@@ -651,7 +651,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
             scaleX = rect.size.height/rect.size.width;
             break;
         case UIImageOrientation.right:
-            rotate = 3 * M_PI_2;
+            rotate = 3 * .pi/2;
             rect = CGRect(x: 0, y: 0, width: image.size.height, height: image.size.width);
             translateX = -rect.size.height;
             translateY = 0;
@@ -659,7 +659,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
             scaleX = rect.size.height/rect.size.width;
             break;
         case UIImageOrientation.down:
-            rotate = M_PI;
+            rotate = .pi;
             rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height);
             translateX = -rect.size.width;
             translateY = -rect.size.height;
