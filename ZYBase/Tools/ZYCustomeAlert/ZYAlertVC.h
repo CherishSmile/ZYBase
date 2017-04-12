@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 @class ZYAlertView;
 @interface ZYAlertVC : UIViewController
-@property(nonatomic,strong)NSArray *dataArr;
 @property(nonatomic,strong)ZYAlertView * alertView;
 @end

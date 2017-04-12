@@ -240,42 +240,23 @@ open class ZYCustomActionAlert: BaseAlertView {
         btn.backgroundColor = .clear
     }
     func dismiss(btn:UIButton)  {
-        dismiss(btn: btn, animated: true)
-    }
-    /**
-     *  Block回调
-     */
-    func dismiss(btn:UIButton,animated:Bool) {
-        UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
-            self.alpha = 0
-        }) { (finished) in
-            if self.completion != nil {
-                var cancled = false
-                if btn == self.cancelButton {
-                    cancled = true
-                }
-                var buttonIndex  = -1
-                if (self.buttons?.count)!>0{
-                    let index  = self.buttons?.index(of: btn)
-                    if index != NSNotFound {
-                        buttonIndex = index!
-                    }
-                    self.completion!(cancled,buttonIndex)
-                }
+        
+        if self.completion != nil {
+            var cancled = false
+            if btn == self.cancelButton {
+                cancled = true
             }
-            self.dismissZYAlert()
+            var buttonIndex  = -1
+            if (self.buttons?.count)!>0{
+                let index  = self.buttons?.index(of: btn)
+                if index != NSNotFound {
+                    buttonIndex = index!
+                }
+                self.completion!(cancled,buttonIndex)
+            }
         }
+        self.dismissZYAlert()
     }
-    
-    
-    /*
-     public var alertCornerRadius : CGFloat!
-     public var titleColor : UIColor!
-     public var messageColor : UIColor!
-     public var cancleTitleColor : UIColor!
-     public var otherTitleColor : UIColor!
-
-     */
     
     //MARK: - 设置警告框的属性
     public func setAlertCornerRadius(_ radius:CGFloat) {
@@ -309,12 +290,4 @@ open class ZYCustomActionAlert: BaseAlertView {
         otherButton.setTitleColor(color, for: .normal)
         otherButton.titleLabel?.font = font
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

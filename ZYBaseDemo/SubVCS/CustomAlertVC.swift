@@ -67,7 +67,7 @@ class CustomAlertVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
         }
         alert.setCancleTitleColor(.red)
         alert.setOtherTitleColor(.blue)
-        alert.showZYAlert(.fade, true)
+        alert.showZYAlert(.dropDown, true)
     }
     func showActionSheet() {
         let name = ZYActionModel(image:"moji_logo", title: "墨迹天气")

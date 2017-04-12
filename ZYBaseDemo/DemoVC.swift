@@ -77,6 +77,8 @@ class DemoVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDele
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let vc = classFromString(vcArr[indexPath.row])
         if let detailVC = vc {
             detailVC.title = demoArr[indexPath.row]

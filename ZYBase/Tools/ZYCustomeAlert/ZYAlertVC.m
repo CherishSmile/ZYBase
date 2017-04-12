@@ -21,15 +21,15 @@
     [super viewDidLoad];
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    //    [self.alertView resetTransition];
-    //    [self.alertView invalidateLayout];
-}
-
 #ifdef __IPHONE_7_0
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+}
+#elif __IPHONE_8_0
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         [self setNeedsStatusBarAppearanceUpdate];
     }
@@ -44,16 +44,6 @@
     }
     return UIInterfaceOrientationMaskAll;
 }
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    UIViewController *viewController = [self.alertView.oldKeyWindow currentViewController];
-    if (viewController) {
-        return [viewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
-    }
-    return YES;
-}
-
 - (BOOL)shouldAutorotate
 {
     UIViewController *viewController = [self.alertView.oldKeyWindow currentViewController];

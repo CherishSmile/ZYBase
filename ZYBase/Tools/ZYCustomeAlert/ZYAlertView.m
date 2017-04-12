@@ -13,8 +13,8 @@
 #import "ZYAlertVC.h"
 
 
-const UIWindowLevel UIWindowLevelSIAlert = 1996.0;  // don't overlap system's alert
-const UIWindowLevel UIWindowLevelSIAlertBackground = 1985.0; // below the alert window
+const UIWindowLevel UIWindowLevelSIAlert = 1996.0;  // 不要和系统的leve了一样
+const UIWindowLevel UIWindowLevelSIAlertBackground = 1985.0; // 在alert Window的下面
 
 NSString *const ZYAlertViewWillShowNotification = @"ZYAlertViewWillShowNotification";
 NSString *const ZYAlertViewDidShowNotification = @"ZYAlertViewDidShowNotification";
@@ -242,7 +242,7 @@ static ZYAlertView *__nt_alert_current_view;
             animation.duration = 0.5;
             animation.delegate = (id)self;
             [animation setValue:completion forKey:@"handler"];
-            [self.containerView.layer addAnimation:animation forKey:@"bouce"];
+            [self.containerView.layer addAnimation:animation forKey:@"bounce"];
         }
         break;
         case ZYAlertViewTransitionStyleDropDown:
@@ -324,7 +324,9 @@ static ZYAlertView *__nt_alert_current_view;
             [animation setValue:completion forKey:@"handler"];
             [self.containerView.layer addAnimation:animation forKey:@"bounce"];
             
-            self.containerView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+            if (completion) {
+                completion();
+            }
         }
         break;
         case ZYAlertViewTransitionStyleDropDown:
