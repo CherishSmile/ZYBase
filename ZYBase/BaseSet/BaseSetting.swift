@@ -295,7 +295,7 @@ public func isMobileNumber(_ mobileNum:String) -> Bool {
 /**
  *  原生打电话
  */
-public func callNumber(_ number:String ,_ vc : UIViewController) {
+public func callNumber(_ number:String) {
     let numberUrl = URL(string: "tel://"+number)
     UIApplication.shared.openURL(numberUrl!)
 }

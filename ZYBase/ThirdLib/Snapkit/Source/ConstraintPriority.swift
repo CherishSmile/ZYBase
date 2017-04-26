@@ -27,42 +27,51 @@
     import AppKit
 #endif
 
+public struct ConstraintPriority : ExpressibleByFloatLiteral, Equatable, Strideable {
+    public typealias FloatLiteralType = Float
+    
+    public let value: Float
+    
+    public init(floatLiteral value: Float) {
+        self.value = value
+    }
+    
+    public init(_ value: Float) {
+        self.value = value
+    }
+    
+    public static var required: ConstraintPriority {
+        return 1000.0
+    }
+    
+    public static var high: ConstraintPriority {
+        return 750.0
+    }
+    
+    public static var medium: ConstraintPriority {
+        #if os(OSX)
+            return 501.0
+        #else
+            return 500.0
+        #endif
+        
+    }
+    
+    public static var low: ConstraintPriority {
+        return 250.0
+    }
+    
+    public static func ==(lhs: ConstraintPriority, rhs: ConstraintPriority) -> Bool {
+        return lhs.value == rhs.value
+    }
 
-public class ConstraintMakerPriortizable: ConstraintMakerFinalizable {
-    
-    @discardableResult
-    public func priority(_ amount: ConstraintPriority) -> ConstraintMakerFinalizable {
-        self.description.priority = amount.value
-        return self
+    // MARK: Strideable
+
+    public func advanced(by n: FloatLiteralType) -> ConstraintPriority {
+        return ConstraintPriority(floatLiteral: value + n)
     }
-    
-    @discardableResult
-    public func priority(_ amount: ConstraintPriorityTarget) -> ConstraintMakerFinalizable {
-        self.description.priority = amount
-        return self
-    }
-    
-    @available(*, deprecated:3.0, message:"Use priority(.required) instead.")
-    @discardableResult
-    public func priorityRequired() -> ConstraintMakerFinalizable {
-        return self.priority(.required)
-    }
-    
-    @available(*, deprecated:3.0, message:"Use priority(.high) instead.")
-    @discardableResult
-    public func priorityHigh() -> ConstraintMakerFinalizable {
-        return self.priority(.high)
-    }
-    
-    @available(*, deprecated:3.0, message:"Use priority(.medium) instead.")
-    @discardableResult
-    public func priorityMedium() -> ConstraintMakerFinalizable {
-        return self.priority(.medium)
-    }
-    
-    @available(*, deprecated:3.0, message:"Use priority(.low) instead.")
-    @discardableResult
-    public func priorityLow() -> ConstraintMakerFinalizable {
-        return self.priority(.low)
+
+    public func distance(to other: ConstraintPriority) -> FloatLiteralType {
+        return other.value - value
     }
 }

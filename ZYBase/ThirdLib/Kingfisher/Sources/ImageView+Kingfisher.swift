@@ -59,6 +59,7 @@ extension Kingfisher where Base: ImageView {
     {
         guard let resource = resource else {
             base.image = placeholder
+            setWebURL(nil)
             completionHandler?(nil, nil, .none, nil)
             return .empty
         }
@@ -82,6 +83,9 @@ extension Kingfisher where Base: ImageView {
             with: resource,
             options: options,
             progressBlock: { receivedSize, totalSize in
+                guard resource.downloadURL == self.webURL else {
+                    return
+                }
                 if let progressBlock = progressBlock {
                     progressBlock(receivedSize, totalSize)
                 }
@@ -152,7 +156,7 @@ extension Kingfisher where Base: ImageView {
         return objc_getAssociatedObject(base, &lastURLKey) as? URL
     }
     
-    fileprivate func setWebURL(_ url: URL) {
+    fileprivate func setWebURL(_ url: URL?) {
         objc_setAssociatedObject(base, &lastURLKey, url, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     

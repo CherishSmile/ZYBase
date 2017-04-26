@@ -57,6 +57,7 @@ extension Kingfisher where Base: UIButton {
     {
         guard let resource = resource else {
             base.setImage(placeholder, for: state)
+            setWebURL(nil, for: state)
             completionHandler?(nil, nil, .none, nil)
             return .empty
         }
@@ -71,6 +72,9 @@ extension Kingfisher where Base: UIButton {
             with: resource,
             options: options,
             progressBlock: { receivedSize, totalSize in
+                guard resource.downloadURL == self.webURL(for: state) else {
+                    return
+                }
                 if let progressBlock = progressBlock {
                     progressBlock(receivedSize, totalSize)
                 }
@@ -128,6 +132,7 @@ extension Kingfisher where Base: UIButton {
     {
         guard let resource = resource else {
             base.setBackgroundImage(placeholder, for: state)
+            setBackgroundWebURL(nil, for: state)
             completionHandler?(nil, nil, .none, nil)
             return .empty
         }
@@ -142,6 +147,9 @@ extension Kingfisher where Base: UIButton {
             with: resource,
             options: options,
             progressBlock: { receivedSize, totalSize in
+                guard resource.downloadURL == self.backgroundWebURL(for: state) else {
+                    return
+                }
                 if let progressBlock = progressBlock {
                     progressBlock(receivedSize, totalSize)
                 }
@@ -189,7 +197,7 @@ extension Kingfisher where Base: UIButton {
         return webURLs[NSNumber(value:state.rawValue)] as? URL
     }
     
-    fileprivate func setWebURL(_ url: URL, for state: UIControlState) {
+    fileprivate func setWebURL(_ url: URL?, for state: UIControlState) {
         webURLs[NSNumber(value:state.rawValue)] = url
     }
     
@@ -232,7 +240,7 @@ extension Kingfisher where Base: UIButton {
         return backgroundWebURLs[NSNumber(value:state.rawValue)] as? URL
     }
     
-    fileprivate func setBackgroundWebURL(_ url: URL, for state: UIControlState) {
+    fileprivate func setBackgroundWebURL(_ url: URL?, for state: UIControlState) {
         backgroundWebURLs[NSNumber(value:state.rawValue)] = url
     }
     
