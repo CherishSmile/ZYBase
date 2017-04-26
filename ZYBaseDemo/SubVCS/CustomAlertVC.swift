@@ -19,7 +19,6 @@ class CustomAlertVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
 
         typeNameArr = ["自定义SelectAlert","自定义ActionAlert","自定义ActionSheet"]
         
-        
         typeTab = creatTabView(self, .plain, { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(NAV_HEIGHT)

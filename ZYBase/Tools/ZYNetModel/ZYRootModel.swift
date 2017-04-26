@@ -16,7 +16,7 @@ open class ZYRootModel: NSObject {
         if json.isEmpty {
             return
         }
-        let dataArrJson = json["data"].arrayValue
+        let dataArrJson = json["list"].arrayValue
         if !dataArrJson.isEmpty {
             var dicArr : Array<ZYDataModel> = []
             for dataDic in dataArrJson {
@@ -25,9 +25,9 @@ open class ZYRootModel: NSObject {
             }
             data = dicArr
         }
-        let dataDicJson = json["data"].dictionaryValue
+        let dataDicJson = json["list"].dictionaryValue
         if !dataDicJson.isEmpty{
-            let dataDic = json["data"]
+            let dataDic = json["list"]
             data = dataClass?.init(fromJson: dataDic)
         }
     
