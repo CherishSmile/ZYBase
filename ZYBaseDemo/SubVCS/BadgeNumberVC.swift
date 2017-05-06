@@ -22,8 +22,8 @@ class BadgeNumberVC: BaseDemoVC {
         }
         view.backgroundColor = .orange
         
-        creatBadgeView(view, .topRight, "20")
-        creatBadgeView(view, .bottomLeft, "4000")
+        _ = creatBadgeView(view, .topRight, "20")
+        _ = creatBadgeView(view, .bottomLeft, "4000")
 
     }
 

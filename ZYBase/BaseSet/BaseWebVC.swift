@@ -15,20 +15,26 @@ let WEBTITLE = "title"
 
 open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDelegate {
     
-    
+    /**
+     *  懒加载创建webView
+     */
     open lazy var baseWeb: BaseWebView = {
         let config = WKWebViewConfiguration.init()
         let webView = BaseWebView.init(superView: self.view, configuration: config, layout: { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(NAV_HEIGHT)
+            make.left.right.top.equalToSuperview()
             make.bottom.equalTo((self.tabBarController?.tabBar==nil || self.tabBarController?.tabBar.isHidden == true) ? 0 : -TOOLBAR_HEIGHT)
         })
         webView.uiDelegate = self
         webView.navigationDelegate = self
         return webView
     }()
+    
     private var shouldShowProgress : Bool = false
     private var jsNameArr : Array<String>?
+    
+    /**
+     *  是否显示进度条
+     */
     public var isShowProgress : Bool {
         get{
             return shouldShowProgress
@@ -42,6 +48,9 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
         
     }
     private var isUseWebPageTitle : Bool = false
+    /**
+     *  是否把webTitle作为navTitle
+     */
     public var isUseWebTitle : Bool {
         get{
             return isUseWebPageTitle

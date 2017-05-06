@@ -7,7 +7,7 @@
 //
 
 import ZYBase
-class DemoVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDelegate{
+class DemoVC: BaseTabVC,UITableViewDelegate,UITableViewDataSource,LBXResultDelegate{
 
     
     fileprivate var demoTab : UITableView!
@@ -22,16 +22,18 @@ class DemoVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDele
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "scan").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(scanClick))
         
+        
+        
         vcArr = ["BadgeNumberVC","CustomAlertVC","ScanVC","AutoCellHightVC","AorKDemoVC","WKWebVC"]
         
         demoArr = ["badgeNumber示例","自定义alert示例","扫一扫示例","TableView自动计算行高示例","Alamofire和Kingfisher示例","WKWebview示例"]
         
         
-        demoTab = creatTabView(self, .plain, { (make) in
-            make.top.equalTo(NAV_HEIGHT)
-            make.left.right.equalToSuperview()
+        demoTab = creatTabView(self, .grouped, { (make) in
+            make.left.right.top.equalToSuperview()
             make.bottom.equalTo(-TOOLBAR_HEIGHT)
         })
+        setSearch(searchView: demoTab, location: .tabHeader, resultVC: nil)
         
     }
     func scanClick()  {

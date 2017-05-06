@@ -19,8 +19,7 @@ class SetVC: BaseDemoVC ,UITableViewDataSource,UITableViewDelegate{
         
         setArr = ["清理缓存"]
         setTab = creatTabView(self, .plain, { (make) in
-            make.top.equalTo(NAV_HEIGHT)
-            make.left.right.equalToSuperview()
+            make.left.right.top.equalToSuperview()
             make.bottom.equalTo(-TOOLBAR_HEIGHT)
         })
         

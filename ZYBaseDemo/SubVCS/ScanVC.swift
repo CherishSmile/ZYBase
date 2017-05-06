@@ -22,8 +22,7 @@ class ScanVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDele
         scanArr = ["微信扫一扫","QQ扫一扫","支付宝扫一扫"]
         
         scanTab = creatTabView(self, .plain, { (make) in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(NAV_HEIGHT)
+            make.left.right.bottom.top.equalToSuperview()
         })
         
         scanTab.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cellID")

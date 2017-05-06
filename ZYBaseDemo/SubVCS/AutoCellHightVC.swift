@@ -27,8 +27,7 @@ class AutoCellHightVC: BaseDemoVC ,UITableViewDataSource,UITableViewDelegate{
         
         autoTab.register(TestTableViewCell.classForCoder(), forCellReuseIdentifier: "cellId")
         autoTab.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(NAV_HEIGHT)
+            make.left.right.bottom.top.equalToSuperview()
         }
         dataInit()
     }
@@ -55,10 +54,11 @@ class AutoCellHightVC: BaseDemoVC ,UITableViewDataSource,UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! TestTableViewCell
         let model = dataArr[indexPath.row]
         cell.configData(model: model)
+        unowned let weakSelf = self
         cell.expendSure={
             model.isExpend = !model.isExpend!
             model.content = model.isExpend! ? longContent : shortContent
-            self.autoTab.reloadData()
+            weakSelf.autoTab.reloadData()
         }
         return cell
     }

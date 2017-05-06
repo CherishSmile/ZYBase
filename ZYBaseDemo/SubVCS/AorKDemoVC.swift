@@ -30,31 +30,55 @@ class UnitModel: ZYDataModel {
 }
 
 
-class AorKDemoVC: BaseDemoVC , UITableViewDelegate , UITableViewDataSource{
+class AorKDemoVC: BaseTabVC , UITableViewDelegate , UITableViewDataSource,UIScrollViewDelegate{
 
     var dataArr:Array<UnitModel> = []
     
     
     lazy var unitTab:UITableView = {
-        let tab = creatTabView(self, .plain)
+        let tab = UITableView(frame: .zero, style: .grouped)
+        tab.backgroundColor = .clear
+        tab.delegate = self
+        tab.dataSource = self
         return tab
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        requestServes()
+    
         
+        
+        self.view.addSubview(unitTab)
         unitTab.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(NAV_HEIGHT)
+            make.left.right.bottom.top.equalToSuperview()
         }
+        
+    
+        
+        unowned let weakSelf = self
+        setRefresh(refreshView: unitTab, refreshType: .headerAndFooter, headerRefresh: {
+            weakSelf.requestServes()
+        }, footerRefresh: {
+            weakSelf.perform(#selector(weakSelf.endFootRefresh), with: nil, afterDelay: 3)
+        })
+        setSearch(searchView: unitTab, location: .tabHeader, resultVC: nil)
+        
+        requestServes()
     }
 
+    func endHeadRefresh() {
+        stopRefresh(refreshType: .header)
+    }
+    func endFootRefresh() {
+        stopRefresh(refreshType: .footer)
+    }
     
     func requestServes() {
-        
+
         let netModel = ZYNetModel.init(para: nil, data: UnitModel.self, map: nil, urlString: url, header: nil)
+        showProgress(title: "正在加载...", superView: self.view, hudMode: .indeterminate, delay: -1)
         ZYNetWork.ZYPOST(netModel: netModel, success: { (isSuccess, model) in
+            dismissProgress()
+            self.endHeadRefresh()
             let rootModel = model as! ZYRootModel
             let modelArr = rootModel.data as! Array<UnitModel>
             self.dataArr = modelArr
@@ -80,6 +104,13 @@ class AorKDemoVC: BaseDemoVC , UITableViewDelegate , UITableViewDataSource{
         return cell!
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if let bgview = unitTab.value(forKey: "_tableHeaderBackgroundView") {
+            (bgview as? UIView)?.backgroundColor = .clear
+        }
+
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -20,8 +20,7 @@ class WKWebVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
         webArr = ["加载远程网页","加载本地网页","HTML示例"]
         
         webTab = creatTabView(self, .plain, { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(NAV_HEIGHT)
+            make.left.right.top.equalToSuperview()
             make.bottom.equalToSuperview()
         })
         
@@ -48,7 +47,7 @@ class WKWebVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            webvc.webUrl = "http://www.mzywx.com"
+            webvc.webUrl = "http://www.zhuotop.com"
             webvc.loadType = .net
         case 1:
             webvc.webUrl = "index"

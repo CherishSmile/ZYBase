@@ -8,12 +8,21 @@
 import UIKit
 import SnapKit
 
+
+var HUD : MBProgressHUD?
+
+/**
+ *  扫一扫样式
+ */
 public enum  ScanStyle:Int {
     case QQScan
     case AliPayScan
     case WechatScan
     case BarCodeScan
 }
+/**
+ *  二维码类型
+ */
 public enum  CodeStyle:Int {
     case AztecCodeGenerator
     case Code128BarcodeGenerator
@@ -210,10 +219,11 @@ public func setBarAttribute(_ navBarColor:UIColor,_ navBarTintColor:UIColor, _ t
 /**
  *  创建BadgeView
  */
-public func creatBadgeView(_ parentView:UIView,_ alignment:ZYBadgeViewAlignment,_ badgeNumber:String) {
+public func creatBadgeView(_ parentView:UIView,_ alignment:ZYBadgeViewAlignment,_ badgeNumber:String) -> ZYBadgeView? {
     let badgeView = ZYBadgeView(parentView: parentView, alignment: alignment)
     badgeView?.badgeText = badgeNumber
     parentView.addSubview(badgeView!)
+    return badgeView
 }
 /**
  *  设置AutoCellHeight
@@ -318,5 +328,32 @@ public func getBundleImage(name:String,type:String) -> UIImage? {
         return  UIImage(contentsOfFile: path)
     }
     return nil
+}
+/**
+ *  展示加载框（不支持自定义）
+ */
+public func showProgress(title:String?,superView:UIView,hudMode:MBProgressHUDMode,delay:TimeInterval) {
+    if HUD != nil {
+        HUD?.removeFromSuperview()
+        HUD = nil
+    }
+    HUD = MBProgressHUD.init(view: superView)
+    superView.addSubview(HUD!)
+    HUD?.label.text = title
+    if hudMode == .customView {
+       HUD?.mode = .indeterminate
+    }else{
+       HUD?.mode = hudMode
+    }
+    HUD?.show(animated: true)
+    if delay>0 {
+        HUD?.hide(animated: true, afterDelay: delay)
+    }
+}
+/**
+ *  隐藏加载框
+ */
+public func dismissProgress(){
+    HUD?.hide(animated: true)
 }
 
