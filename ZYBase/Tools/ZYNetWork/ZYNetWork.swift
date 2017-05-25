@@ -10,11 +10,11 @@ import UIKit
 import Alamofire
 
 
-open class ZYUploadModel: NSObject {
-    open var dataArr : [Data]!
-    open var withName : String!
-    open var fileName : String!
-    open var mimeType : String!
+public class ZYUploadModel: NSObject {
+    public var dataArr : [Data]!
+    public var withName : String!
+    public var fileName : String!
+    public var mimeType : String!
     public init(uploadArr:[Data],name:String,fName:String,type:String) {
         super.init()
         dataArr = uploadArr
@@ -24,12 +24,12 @@ open class ZYUploadModel: NSObject {
     }
 }
 
-open class ZYNetModel: NSObject {
-    open var paramers : [String:Any]?
-    open var url : String!
-    open var dataClass : AnyClass?
-    open var mapClass : AnyClass?
-    open var headers : HTTPHeaders?
+public class ZYNetModel: NSObject {
+    public var paramers : [String:Any]?
+    public var url : String!
+    public var dataClass : AnyClass?
+    public var mapClass : AnyClass?
+    public var headers : HTTPHeaders?
     
     public init(para:[String:Any]?,data:AnyClass?,map:AnyClass?,urlString:String,header:HTTPHeaders?) {
         super.init()
@@ -43,7 +43,7 @@ open class ZYNetModel: NSObject {
 
 public typealias SuccessClosure = (Bool,Any) -> ()
 public typealias FailClosure = (Bool,Any) -> ()
-open class ZYNetWork: NSObject {
+public class ZYNetWork: NSObject {
     
 
     /**
@@ -53,7 +53,7 @@ open class ZYNetWork: NSObject {
      *   - success: 成功回调
      *   - fail: 失败回调
      */
-    open class func ZYGET(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure)  {
+    public class func ZYGET(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure)  {
         Alamofire.request(netModel.url!, method: .get, parameters: netModel.paramers, encoding: URLEncoding.default, headers: netModel.headers).responseJSON { (response) in
             if  response.result.isSuccess {
                 if let value = response.result.value {
@@ -79,7 +79,7 @@ open class ZYNetWork: NSObject {
      *   - success: 成功回调
      *   - fail: 失败回调
      */
-    open class func ZYPOST(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
+    public class func ZYPOST(netModel:ZYNetModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
         Alamofire.request(netModel.url!, method: .post, parameters: netModel.paramers, encoding: URLEncoding.default,headers: netModel.headers).responseJSON { (response) in
             if  response.result.isSuccess {
                 if let value = response.result.value {
@@ -105,7 +105,7 @@ open class ZYNetWork: NSObject {
      *   - success: 成功回调
      *   - fail: 失败回调
      */
-    open class func ZYUPLOAD(netModel:ZYNetModel,uploadModel:ZYUploadModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
+    public class func ZYUPLOAD(netModel:ZYNetModel,uploadModel:ZYUploadModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
         Alamofire.upload((uploadModel.dataArr?.first)!, to: netModel.url).responseJSON { (response) in
             if  response.result.isSuccess {
                 if let value = response.result.value {
@@ -132,7 +132,7 @@ open class ZYNetWork: NSObject {
      *   - success: 成功回调
      *   - fail: 失败回调
      */
-    open class func ZYMULUPLOAD(netModel:ZYNetModel,uploadModel:ZYUploadModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
+    public class func ZYMULUPLOAD(netModel:ZYNetModel,uploadModel:ZYUploadModel,success:@escaping SuccessClosure,fail:@escaping FailClosure) {
         Alamofire.upload(multipartFormData: { multipartFormData in
             for data in uploadModel.dataArr!{
                 multipartFormData.append(data, withName: uploadModel.withName, fileName: uploadModel.fileName, mimeType: uploadModel.mimeType)

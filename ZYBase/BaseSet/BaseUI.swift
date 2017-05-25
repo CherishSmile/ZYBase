@@ -15,19 +15,19 @@ var HUD : MBProgressHUD?
  *  扫一扫样式
  */
 public enum  ScanStyle:Int {
-    case QQScan
-    case AliPayScan
-    case WechatScan
-    case BarCodeScan
+    case qq
+    case aliPay
+    case wechat
+    case barCode
 }
 /**
  *  二维码类型
  */
 public enum  CodeStyle:Int {
-    case AztecCodeGenerator
-    case Code128BarcodeGenerator
-    case PDF417BarcodeGenerator
-    case QRCodeGenerator
+    case aztec
+    case code128
+    case pdf417
+    case qr
 }
 /**
  *  创建UITextField
@@ -235,17 +235,17 @@ public func setAutoCellHeightCondition(_ myself:UITableViewCell ,_ lastView:UIVi
 /**
  *  返回扫一扫样式
  */
-public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
+public func scanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
     
     let bundle = Bundle(for: BaseVC.self)
     
     var scanStyle = LBXScanViewStyle()
     switch style {
-    case .QQScan:
+    case .qq:
         scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_light_green@2x", ofType: "png")!)
         
-    case .AliPayScan:
-        scanStyle.centerUpOffset = getPointByPixelH(120)        
+    case .aliPay:
+        scanStyle.centerUpOffset = getPtH(120)
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
         scanStyle.photoframeLineW = 2.0;
         scanStyle.photoframeAngleW = 16;
@@ -255,8 +255,8 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.anmiationStyle = LBXScanViewAnimationStyle.NetGrid;
         scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_scan_full_net@2x", ofType: "png")!)
         
-    case .WechatScan:
-        scanStyle.centerUpOffset = getPointByPixelH(88);
+    case .wechat:
+        scanStyle.centerUpOffset = getPtH(88);
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
         scanStyle.photoframeLineW = 2;
         scanStyle.photoframeAngleW = 18;
@@ -266,8 +266,8 @@ public func ScanViewStyle(_ style:ScanStyle) -> LBXScanViewStyle {
         scanStyle.colorAngle = UIColor(red: 0.0/255, green: 200.0/255.0, blue: 20.0/255.0, alpha: 1.0)
         
         scanStyle.animationImage = UIImage(contentsOfFile: bundle.path(forResource: "CodeScan.bundle/qrcode_Scan_weixin_Line@2x", ofType: "png")!)
-    case .BarCodeScan:
-        scanStyle.centerUpOffset = getPointByPixelH(88);
+    case .barCode:
+        scanStyle.centerUpOffset = getPtH(88);
         scanStyle.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
         scanStyle.photoframeLineW = 4;
         scanStyle.photoframeAngleW = 28;
@@ -290,7 +290,7 @@ public func creatCode(_ codeType:CodeStyle,_ codeString:String,_ size:CGSize,_ Q
     
     var QRStyle:String?
     switch codeType {
-    case .QRCodeGenerator:
+    case .qr:
         QRStyle =  "CIQRCodeGenerator"
         let QRImage = LBXScanWrapper.createCode(codeType: QRStyle!, codeString: codeString, size: size, qrColor: QRColor, bkColor: bkColor)
         
@@ -304,15 +304,15 @@ public func creatCode(_ codeType:CodeStyle,_ codeString:String,_ size:CGSize,_ Q
         }else{
             return QRImage
         }
-    case .AztecCodeGenerator:
+    case .aztec:
         QRStyle =  "CIAztecCodeGenerator"
         let  barCodeImage = LBXScanWrapper.createCode128(codeString:codeString , size: size, qrColor: QRColor, bkColor: bkColor)
         return barCodeImage
-    case .Code128BarcodeGenerator:
+    case .code128:
         QRStyle =  "CICode128BarcodeGenerator"
         let  barCodeImage = LBXScanWrapper.createCode128(codeString:codeString , size: size, qrColor: QRColor, bkColor: bkColor)
         return barCodeImage
-    case .PDF417BarcodeGenerator:
+    case .pdf417:
         QRStyle =  "CIPDF417BarcodeGenerator"
         let  barCodeImage = LBXScanWrapper.createCode128(codeString:codeString , size: size, qrColor: QRColor, bkColor: bkColor)
         return barCodeImage

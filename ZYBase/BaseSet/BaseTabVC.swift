@@ -53,8 +53,6 @@ open class BaseTabVC: BaseVC {
         // Do any additional setup after loading the view.
     }
 
-    
-    
     //MARK: - 设置搜索
     public func setSearch(searchView:UITableView?,location:SearchLocationType,resultVC:UIViewController?) {
         
@@ -63,8 +61,9 @@ open class BaseTabVC: BaseVC {
         searchVC?.delegate = self as? UISearchControllerDelegate
         searchVC?.dimsBackgroundDuringPresentation = false
         searchVC?.searchBar.delegate = self as? UISearchBarDelegate
-        searchVC?.setPlaceholderColor(.red)
-        searchVC?.setCursorColor(.green)
+//        searchVC?.setPlaceholderColor(.red)
+//        searchVC?.setCursorColor(.green)
+//        searchVC?.searchBar.isCenterPlaceholder = false
     
         switch location {
         case .navTitle:

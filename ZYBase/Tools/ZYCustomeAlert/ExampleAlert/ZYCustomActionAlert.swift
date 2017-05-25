@@ -17,7 +17,7 @@ private let AlertViewLineLayerWidth:CGFloat = 0.5
 
 public typealias ZYActionAlertCompletionClosure = (_ isCancle:Bool,Int) -> Void
 
-open class ZYCustomActionAlert: BaseAlertView {
+open class ZYCustomActionAlert: UIView {
 
     
     var titleLabel : UILabel!

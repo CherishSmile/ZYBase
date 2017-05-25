@@ -10,8 +10,8 @@ import UIKit
 import Kingfisher
 private let ZYActionCellID = "ZYActionCellID"
 
-private let AlertViewCellHeight:CGFloat = getPointByPixelW(80);
-private let AlertViewHeaderHeight:CGFloat = getPointByPixelH(10);
+private let AlertViewCellHeight:CGFloat = getPtH(80)
+private let AlertViewHeaderHeight:CGFloat = getPtH(10)
 
 public typealias ZYActionSheetCompletionClosure = (_ isCancle:Bool,Int) -> Void
 
@@ -28,7 +28,7 @@ open class ZYActionModel: NSObject {
         name = title
         
         nameColor = .black
-        nameFont = getFont(getPointByPixelW(30))
+        nameFont = getFont(getPtW(30))
     }
 }
 
@@ -50,16 +50,15 @@ open class ZYActionCell: UITableViewCell {
             make.centerY.centerX.width.height.equalToSuperview()
         })
         titleBtn.isUserInteractionEnabled = false
-        titleBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -getPointByPixelW(10), bottom: 0, right: getPointByPixelW(10))
+        titleBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -getPtW(10), bottom: 0, right: getPtW(10))
     }
     
     func configData(model:ZYActionModel) {
         if let imageStr = model.leftImage {
             if imageStr.hasPrefix("http://") || imageStr.hasPrefix("https://") {
                 titleBtn.kf.setImage(with:  URL(string: imageStr), for: .normal)
-                
             }else{
-                titleBtn.setImage(getImage(imageStr)?.withRenderingMode(.alwaysOriginal), for: .normal)
+                titleBtn.setImage(UIImage(named: imageStr)?.withRenderingMode(.alwaysOriginal), for: .normal)
             }
         }
         titleBtn.setTitle(model.name, for: .normal)
@@ -68,7 +67,7 @@ open class ZYActionCell: UITableViewCell {
     }
 }
 
-open class ZYCustomActionSheet: BaseAlertView,UITableViewDelegate,UITableViewDataSource {
+open class ZYCustomActionSheet: UIView,UITableViewDelegate,UITableViewDataSource {
 
     var isHasTitle : Bool = false
     public var dataArr : Array<Array<ZYActionModel>> = []

@@ -16,7 +16,7 @@ class MyQRCodeViewController: BaseDemoVC {
 
         let bgView = UIImageView(frame: .init(x: 0, y: 0, width:SCREEN_WIDTH-100, height: SCREEN_WIDTH-100))
         bgView.center = self.view.center
-        bgView.image = creatCode(.QRCodeGenerator, "http://www.baidu.com", .init(width: SCREEN_WIDTH-100, height: SCREEN_WIDTH-100), .black, .white, nil,nil)
+        bgView.image = creatCode(.qr, "http://www.baidu.com", .init(width: SCREEN_WIDTH-100, height: SCREEN_WIDTH-100), .black, .white, nil,nil)
         self.view.addSubview(bgView)
         
         // Do any additional setup after loading the view.

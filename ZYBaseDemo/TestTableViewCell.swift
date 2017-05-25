@@ -34,7 +34,7 @@ class TestTableViewCell: UITableViewCell {
     
     func creatSubviews()  {
         btn = creatButton("点击操作", .system)
-        drowBorder(btn, .cyan, 6.0)
+        drawBorder(btn, .cyan, 6.0)
         btn.backgroundColor = .orange
         btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         self.contentView.addSubview(btn)
@@ -42,7 +42,7 @@ class TestTableViewCell: UITableViewCell {
         lbl = creatLable(getFont(14), nil)
         lbl.numberOfLines = 0
         lbl.backgroundColor = .brown
-        drowBorder(lbl, .blue, 6.0)
+        drawBorder(lbl, .blue, 6.0)
         self.contentView.addSubview(lbl)
         lbl.preferredMaxLayoutWidth = SCREEN_WIDTH-20
         

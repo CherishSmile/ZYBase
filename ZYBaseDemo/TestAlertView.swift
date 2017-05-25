@@ -8,10 +8,10 @@
 
 import ZYBase
 
-class TestAlertView: BaseAlertView {
+class TestAlertView: UIView {
 
     func creatAlertView() {
-        drowBorder(self, .gray, 3.0)
+        drawBorder(self, .gray, 3.0)
         self.backgroundColor = .white
         let marllbl = creatLable(getFont(14), "继承BaseAlertView，创建你想要的alert")
         marllbl.frame = .init(x: 0, y: 0, width: VIEW_WIDTH(self), height: VIEW_HEIGHT(self))

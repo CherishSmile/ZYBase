@@ -22,11 +22,10 @@ class DemoVC: BaseTabVC,UITableViewDelegate,UITableViewDataSource,LBXResultDeleg
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "scan").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(scanClick))
         
+            
+        vcArr = ["BadgeNumberVC","CustomAlertVC","ScanVC","AutoCellHightVC","AorKDemoVC","WKWebVC","HMSegmentVC"]
         
-        
-        vcArr = ["BadgeNumberVC","CustomAlertVC","ScanVC","AutoCellHightVC","AorKDemoVC","WKWebVC"]
-        
-        demoArr = ["badgeNumber示例","自定义alert示例","扫一扫示例","TableView自动计算行高示例","Alamofire和Kingfisher示例","WKWebview示例"]
+        demoArr = ["badgeNumber示例","自定义alert示例","扫一扫示例","TableView自动计算行高示例","Alamofire和Kingfisher示例","WKWebview示例","HMSegmentControl示例"]
         
         
         demoTab = creatTabView(self, .grouped, { (make) in
@@ -40,7 +39,7 @@ class DemoVC: BaseTabVC,UITableViewDelegate,UITableViewDataSource,LBXResultDeleg
         let scanVC = QQScanVC()
         scanVC.title = "扫一扫"
         scanVC.resultDelegate = self
-        scanVC.scanStyle = ScanViewStyle(.QQScan)
+        scanVC.scanStyle = scanViewStyle(.qq)
         scanVC.isOpenInterestRect = true
         scanVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(scanVC, animated: true)

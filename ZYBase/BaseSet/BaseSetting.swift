@@ -11,13 +11,15 @@ import UIKit
 import Foundation
 import WebKit
 import Kingfisher
+
+
 ///设备屏幕尺寸
-public let SCREEN_NAVWIDTH=UIScreen.main.nativeBounds.size.width
-public let SCREEN_NAVHEIGHT=UIScreen.main.nativeBounds.size.height
-public let SCREEN_WIDTH=UIScreen.main.bounds.size.width
-public let SCREEN_HEIGHT=UIScreen.main.bounds.size.height
-public let SCREEN_MAX_LENGTH=max(SCREEN_WIDTH, SCREEN_HEIGHT)
-public let SCREEN_MIN_LENGTH=min(SCREEN_WIDTH, SCREEN_HEIGHT)
+public let SCREEN_NAVWIDTH   = UIScreen.main.nativeBounds.size.width
+public let SCREEN_NAVHEIGHT  = UIScreen.main.nativeBounds.size.height
+public let SCREEN_WIDTH      = UIScreen.main.bounds.size.width
+public let SCREEN_HEIGHT     = UIScreen.main.bounds.size.height
+public let SCREEN_MAX_LENGTH = max(SCREEN_WIDTH, SCREEN_HEIGHT)
+public let SCREEN_MIN_LENGTH = min(SCREEN_WIDTH, SCREEN_HEIGHT)
 
 ///导航高度
 public let NAV_HEIGHT : CGFloat = 64.0
@@ -29,7 +31,6 @@ public func printLog<T>(_ items:T ,file:String = #file,method: String = #functio
         print("\((file as NSString).lastPathComponent)[\(line)],\(method):\n\(items)\n--------------------------------------")
     #endif
 }
-
 
 /**
  *  设备类型
@@ -91,9 +92,9 @@ public func PhoneType() -> iPhoneType{
 
 
 /**
- *  像素适配（宽）（以6为基准750*1334
+ *  像素适配（宽）（以6为基准750*1334)
  */
-public func getPointByPixelW(_ width:CGFloat) -> CGFloat{
+public func getPtW(_ width:CGFloat) -> CGFloat{
     var pixelW = CGFloat()
     switch PhoneType() {
     case .iPhone4Series,.iPhone5Series,.iPhoneCommenSeries:
@@ -109,9 +110,9 @@ public func getPointByPixelW(_ width:CGFloat) -> CGFloat{
 
 
 /**
- *  像素适配（高）（以6为基准750*1334
+ *  像素适配（高）（以6为基准750*1334)
  */
-public func getPointByPixelH(_ height:CGFloat) -> CGFloat{
+public func getPtH(_ height:CGFloat) -> CGFloat{
     var pixelH = CGFloat()
     switch PhoneType() {
     case .iPhone4Series,.iPhone5Series,.iPhoneCommenSeries:
@@ -132,11 +133,17 @@ public func UIColorFromRGB(_ rgbValue:NSInteger) -> UIColor {
     let color = UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0, blue: ((CGFloat)(rgbValue & 0xFF))/255.0, alpha: 1.0)
     return color
 }
-
+/**
+ *  颜色 rgbValue: 带有alpha的16进制的rgb色值,
+ */
+public func UIColorFromRGB(_ rgbValue:NSInteger,_ alpha:CGFloat) -> UIColor {
+    let color = UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0, blue: ((CGFloat)(rgbValue & 0xFF))/255.0, alpha: alpha)
+    return color
+}
 /**
  *  画圆角（自定义线宽）
  */
-public func drowBorderWidth(_ view:UIView,_ color:UIColor,_ width:CGFloat,_ radiuce:CGFloat){
+public func drawBorder(_ view:UIView,_ color:UIColor,_ width:CGFloat,_ radiuce:CGFloat){
     view.layer.borderColor=color.cgColor
     view.layer.borderWidth=width
     view.layer.cornerRadius=radiuce
@@ -146,8 +153,8 @@ public func drowBorderWidth(_ view:UIView,_ color:UIColor,_ width:CGFloat,_ radi
 /**
  *  画圆角（固定线宽0.5）
  */
-public func drowBorder(_ view:UIView,_ color:UIColor,_ radiuce:CGFloat){
-    drowBorderWidth(view, color, 0.5, radiuce)
+public func drawBorder(_ view:UIView,_ color:UIColor,_ radiuce:CGFloat){
+    drawBorder(view, color, 0.5, radiuce)
 }
 
 
@@ -161,7 +168,7 @@ public func changeToJsonDicString(_ jsonDict:Dictionary<String, Any>) -> String?
         let jsonString = String(data: jsonData, encoding: String.Encoding.utf8)
         jsonStr=jsonString!
     } catch {
-        print(error)
+        printLog(error)
     }
     return jsonStr
 }
@@ -169,11 +176,11 @@ public func changeToJsonDicString(_ jsonDict:Dictionary<String, Any>) -> String?
 /**
  *  展示alert
  */
-public func showAlert(_ title:String,_ message:String,_ vc:UIViewController){
+public func showAlert(_ title:String,_ message:String) -> UIAlertController{
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     let sureAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
     alert.addAction(sureAction)
-    vc.present(alert, animated:true, completion: nil)
+    return alert
 }
 
 
@@ -237,13 +244,6 @@ public func getTimeDate(_ time:TimeInterval ,_ timeformat:String) -> String {
 public func getCurrentTime(_ timeformat:String) -> String {
     let currentTime = Date().timeIntervalSince1970
     return getTimeDate(currentTime, timeformat)
-}
-
-/**
- *  设置图片
- */
-public func getImage(_ image:String) -> UIImage?{
-    return UIImage(named: image)
 }
 
 /**

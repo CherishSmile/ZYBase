@@ -59,7 +59,7 @@ class ScanVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDele
     func WechatScan()  {
         
         let scanVC = LBXScanViewController()
-        scanVC.scanStyle = ScanViewStyle(.WechatScan)
+        scanVC.scanStyle = scanViewStyle(.wechat)
         scanVC.isOpenInterestRect = true
         scanVC.title = "微信扫一扫"
         scanVC.resultDelegate = self
@@ -70,13 +70,13 @@ class ScanVC: BaseDemoVC,UITableViewDelegate,UITableViewDataSource,LBXResultDele
         let scanVC = QQScanVC()
         scanVC.title = "QQ扫一扫"
         scanVC.resultDelegate = self
-        scanVC.scanStyle = ScanViewStyle(.QQScan)
+        scanVC.scanStyle = scanViewStyle(.qq)
         scanVC.isOpenInterestRect = true
         self.navigationController?.pushViewController(scanVC, animated: true)
     }
     func AlipayScan() {
         let scanVC = LBXScanViewController()
-        scanVC.scanStyle = ScanViewStyle(.AliPayScan)
+        scanVC.scanStyle = scanViewStyle(.aliPay)
         scanVC.isOpenInterestRect = true
         scanVC.title = "支付宝扫一扫"
         scanVC.resultDelegate = self

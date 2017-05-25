@@ -8,9 +8,34 @@
 
 import UIKit
 import WebKit
+import SnapKit
 
 let WEBPROGRESS = "estimatedProgress"
 let WEBTITLE = "title"
+
+
+
+extension WKWebView{
+    /**
+     *   AutoLayout初始化WKWebview
+     */
+    public convenience init(superView:UIView,configuration: WKWebViewConfiguration,layout:(_ make: ConstraintMaker) -> Void) {
+        self.init(frame: .zero, configuration: configuration)
+        superView.addSubview(self)
+        backgroundColor = .white
+        snp.makeConstraints(layout)
+    }
+    
+    /**
+     *   Frame初始化的WKWebView
+     */
+    public convenience init(superView:UIView,configuration: WKWebViewConfiguration,frame:CGRect) {
+        self.init(frame: frame, configuration: configuration)
+        backgroundColor = .white
+        superView.addSubview(self)
+    }
+
+}
 
 
 open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDelegate {
@@ -18,9 +43,9 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     /**
      *  懒加载创建webView
      */
-    open lazy var baseWeb: BaseWebView = {
+    public lazy var baseWeb: WKWebView = {
         let config = WKWebViewConfiguration.init()
-        let webView = BaseWebView.init(superView: self.view, configuration: config, layout: { (make) in
+        let webView = WKWebView.init(superView: self.view, configuration: config, layout: { (make) in
             make.left.right.top.equalToSuperview()
             make.bottom.equalTo((self.tabBarController?.tabBar==nil || self.tabBarController?.tabBar.isHidden == true) ? 0 : -TOOLBAR_HEIGHT)
         })
@@ -65,24 +90,13 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    open func initWebView()  {
-        let config = WKWebViewConfiguration.init()
-        baseWeb = BaseWebView.init(superView: self.view, configuration: config, layout: { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(NAV_HEIGHT)
-            make.bottom.equalTo(self.tabBarController?.tabBar.isHidden == true ? 0 : -TOOLBAR_HEIGHT)
-        })
-        baseWeb.uiDelegate = self
-        baseWeb.navigationDelegate = self
-    
+        
     }
     
     /**
      *  JS调用OC 添加处理脚本
      */
-    open func addJavaScriptMessages(_ names:Array<String>){
+    public func addJavaScriptMessages(_ names:Array<String>){
         jsNameArr = names
         let userCC = baseWeb.configuration.userContentController
         for name in names {
@@ -92,7 +106,7 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     /**
      *  加载网页
      */
-    open func webloadHtml(urlStr:String) {
+    public func webloadHtml(urlStr:String) {
             if urlStr.lowercased().hasPrefix("http://")||urlStr.lowercased().hasPrefix("https://") {
                 baseWeb.load(URLRequest(url: URL(string: urlStr)!))
             }else{
@@ -112,13 +126,13 @@ open class BaseWebVC: BaseVC,WKScriptMessageHandler,WKUIDelegate,WKNavigationDel
     /**
      *  调用js，不带返回值
      */
-    open func callJavaScript(_ jsMethod:String!) {
+    public func callJavaScript(_ jsMethod:String!) {
         callJavaScript(jsMethod, handler: nil)
     }
     /**
      *  调用js，带返回值
      */
-    open func callJavaScript(_ jsMethod:String!, handler: ((Any?, Error?) -> Swift.Void)? = nil)  {
+    public func callJavaScript(_ jsMethod:String!, handler: ((Any?, Error?) -> Swift.Void)? = nil)  {
         printLog("调用的js方法："+jsMethod)
         baseWeb.evaluateJavaScript(jsMethod, completionHandler: handler)
     }

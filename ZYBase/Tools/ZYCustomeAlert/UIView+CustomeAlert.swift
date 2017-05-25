@@ -1,13 +1,14 @@
 //
-//  BaseAlertView.swift
-//  BaseDemo
+//  UIView+CustomeAlert.swift
+//  ZYBase
 //
-//  Created by MZY on 2016/12/22.
-//  Copyright © 2016年 MZY. All rights reserved.
+//  Created by MAC on 2017/5/8.
+//  Copyright © 2017年 Mzywx. All rights reserved.
 //
 
-open class BaseAlertView: UIView {
-    
+import Foundation
+
+extension UIView{
     /**
      * 显示alert
      */
@@ -18,6 +19,7 @@ open class BaseAlertView: UIView {
         aletView.transitionStyle = style;
         aletView.show()
     }
+    
     /**
      *  隐藏alert
      */
@@ -27,4 +29,6 @@ open class BaseAlertView: UIView {
             alertView.dismiss(animated: true)
         }
     }
+
 }
+

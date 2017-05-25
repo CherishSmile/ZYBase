@@ -22,7 +22,12 @@ FOUNDATION_EXPORT const unsigned char ZYBaseVersionString[];
 #import <ZYBase/UINavigationController+SGProgress.h>
 #import <ZYBase/MJRefresh.h>
 #import <ZYBase/NSObject+Swizzling.h>
+#import <ZYBase/NSObject+Property.h>
 #import <ZYBase/MBProgressHUD.h>
+#import <ZYBase/UISearchBar+PlaceholderAlignment.h>
+#import <ZYBase/HMSegmentedControl.h>
+#import <ZYBase/ZYChineseSort.h>
+
 
 /*
  若直接把文件拖入swift工程，则需创建桥接头文件并导入以下oc头文件

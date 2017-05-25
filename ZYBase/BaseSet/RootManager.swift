@@ -13,7 +13,6 @@ open class RootManager: NSObject {
         
     }
  
-    
     /**
      *  创建TabBar
      *  - window: window

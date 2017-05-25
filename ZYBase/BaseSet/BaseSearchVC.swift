@@ -82,12 +82,16 @@ open class BaseSearchVC: UISearchController {
     public func setCursorAndCancleColor(_ color:UIColor){
         searchBar.tintColor = color
     }
+    
     /**
      *  设置光标颜色
      */
     public func setCursorColor(_ color:UIColor){
         textField?.tintColor = color
     }
+    
+    
+    
     /**
      *  设置取消按钮的字体颜色，只有在showsCancelButton = true 的情况下生效
      */

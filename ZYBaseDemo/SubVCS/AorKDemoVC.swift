@@ -45,14 +45,10 @@ class AorKDemoVC: BaseTabVC , UITableViewDelegate , UITableViewDataSource,UIScro
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
-        
         self.view.addSubview(unitTab)
         unitTab.snp.makeConstraints { (make) in
             make.left.right.bottom.top.equalToSuperview()
         }
-        
-    
         
         unowned let weakSelf = self
         setRefresh(refreshView: unitTab, refreshType: .headerAndFooter, headerRefresh: {
