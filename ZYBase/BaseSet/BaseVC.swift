@@ -11,7 +11,7 @@ open class BaseVC: UIViewController {
     override  open func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .white
+        view.backgroundColor = .white
         
     }
     override  open func didReceiveMemoryWarning() {
@@ -19,12 +19,12 @@ open class BaseVC: UIViewController {
     }
     
     override  open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
 
     
     deinit {
-        printLog("\(self.classForCoder) deinit");
+        printLog("\(classForCoder) deinit");
     }
 
 }

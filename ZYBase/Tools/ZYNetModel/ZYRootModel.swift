@@ -12,7 +12,7 @@ open class ZYRootModel: NSObject {
     public var message : String!
     public var status : String!
     public var statusCode : String!
-    public init(fromJson json:JSON!,dataClass:ZYDataModel.Type?,mapClass:ZYMapModel.Type?) {
+    public init(fromJson json:JSON,dataClass:ZYDataModel.Type?,mapClass:ZYMapModel.Type?) {
         if json.isEmpty {
             return
         }
@@ -51,16 +51,14 @@ open class ZYRootModel: NSObject {
         statusCode = json["statusCode"].stringValue
     }
 }
-protocol HandleJson {
-     init(fromJson json:JSON!)
-}
-open class ZYDataModel: NSObject,HandleJson {
-    required public init(fromJson json:JSON!) {
+
+open class ZYDataModel: NSObject {
+    required public init(fromJson json:JSON) {
         
     }
 }
-open class ZYMapModel: NSObject,HandleJson {
-    required public init(fromJson json:JSON!) {
+open class ZYMapModel: NSObject {
+    required public init(fromJson json:JSON) {
         
     }
 }

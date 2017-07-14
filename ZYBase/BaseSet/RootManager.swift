@@ -22,6 +22,10 @@ open class RootManager: NSObject {
      *  - selectImages: tabBarItem的selectimage
      */
     open func creatRootVC(_ window:UIWindow,_ controllers:Array<AnyClass>,_ titles:Array<String>?,_ images:Array<UIImage>?,_ selectImages:Array<UIImage>?) {
+        
+        NotificationCenter.default.removeObserver(self)
+        window.rootViewController = nil
+        
         var navArr:Array<UIViewController> = []
         for i in 0..<controllers.count {
             let vcCls = controllers[i] as! UIViewController.Type
@@ -52,11 +56,30 @@ open class RootManager: NSObject {
     
 
     /**
+     *  创建登录页
+     *  - window: window
+     *  - controller: controller
+     */
+    open func creatLoginVC(_ window:UIWindow,_ controller:AnyClass) {
+        
+        NotificationCenter.default.removeObserver(self)
+        window.rootViewController = nil
+        
+        let loginCls = controller as! UIViewController.Type
+        let loginVC = loginCls.init()
+        let nav = UINavigationController(rootViewController: loginVC)
+        window.rootViewController = nav
+        window.makeKeyAndVisible()
+    }
+
+    
+    /**
      *  创建启动页
      *  - window: window
      *  - controller: controller
      */
     open func creatIntroVC(_ window:UIWindow,_ controller:AnyClass) {
+        
         let introCls = controller as! UIViewController.Type
         let introVC = introCls.init()
         window.rootViewController = introVC
