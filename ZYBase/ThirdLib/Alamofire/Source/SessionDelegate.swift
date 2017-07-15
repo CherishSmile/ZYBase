@@ -462,13 +462,8 @@ extension SessionDelegate: URLSessionTaskDelegate {
         // Determine whether an error has occurred
         var error: Error? = error
 
-<<<<<<< 92d38137912408d5bc7d792febc79634724ddc2c
-        if let taskDelegate = self[task]?.delegate, taskDelegate.error != nil {
-            error = taskDelegate.error
-=======
         if request.delegate.error != nil {
             error = request.delegate.error
->>>>>>> 修改bug
         }
 
         /// If an error occurred and the retrier is set, asynchronously ask the retrier if the request

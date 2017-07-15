@@ -162,11 +162,7 @@ extension Result {
     ///     try print(noInt.unwrap())
     ///     // Throws error
     ///
-<<<<<<< 92d38137912408d5bc7d792febc79634724ddc2c
-    /// - parameter transform: A closure that takes the success value of the result instance.
-=======
     /// - parameter transform: A closure that takes the success value of the `Result` instance.
->>>>>>> 修改bug
     ///
     /// - returns: A `Result` containing the result of the given closure. If this instance is a failure, returns the
     ///            same failure.
@@ -204,8 +200,6 @@ extension Result {
             return .failure(error)
         }
     }
-<<<<<<< 92d38137912408d5bc7d792febc79634724ddc2c
-=======
 
     /// Evaluates the specified closure when the `Result` is a failure, passing the unwrapped error as a parameter.
     ///
@@ -303,5 +297,4 @@ extension Result {
 
         return self
     }
->>>>>>> 修改bug
 }

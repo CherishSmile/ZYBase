@@ -46,11 +46,7 @@ public typealias RequestRetryCompletion = (_ shouldRetry: Bool, _ timeDelay: Tim
 public protocol RequestRetrier {
     /// Determines whether the `Request` should be retried by calling the `completion` closure.
     ///
-<<<<<<< 92d38137912408d5bc7d792febc79634724ddc2c
-    /// This operation is fully asychronous. Any amount of time can be taken to determine whether the request needs
-=======
     /// This operation is fully asynchronous. Any amount of time can be taken to determine whether the request needs
->>>>>>> 修改bug
     /// to be retried. The one requirement is that the completion closure is called to ensure the request is properly
     /// cleaned up after.
     ///
@@ -273,11 +269,7 @@ extension Request: CustomDebugStringConvertible {
     }
 
     func cURLRepresentation() -> String {
-<<<<<<< 92d38137912408d5bc7d792febc79634724ddc2c
-        var components = ["$ curl -i"]
-=======
         var components = ["$ curl -v"]
->>>>>>> 修改bug
 
         guard let request = self.request,
               let url = request.url,
