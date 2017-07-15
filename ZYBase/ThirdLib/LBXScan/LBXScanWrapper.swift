@@ -1,6 +1,6 @@
 //
 //  LBXScanWrapper.swift
-//  swiftScan https://github.com/MxABC/swiftScan
+//  swiftScan
 //
 //  Created by lbxia on 15/12/10.
 //  Copyright © 2015年 xialibing. All rights reserved.
@@ -185,10 +185,10 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
                 
                 //码类型
                 let codeType = code.type
-                print("code type:%@",codeType!)
+//                print("code type:%@",codeType)
                 //码内容
                 let codeContent = code.stringValue
-                print("code string:%@",codeContent!)
+//                print("code string:%@",codeContent)
                 
                 //4个字典，分别 左上角-右上角-右下角-左下角的 坐标百分百，可以使用这个比例抠出码的图像
                 // let arrayRatio = code.corners
@@ -690,7 +690,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
 
     deinit
     {
-        print("LBXScanWrapper deinit")
+//        print("LBXScanWrapper deinit")
     }
     
     

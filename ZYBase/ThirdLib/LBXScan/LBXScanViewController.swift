@@ -1,6 +1,6 @@
 //
 //  LBXScanViewController.swift
-//  swiftScan https://github.com/MxABC/swiftScan
+//  swiftScan
 //
 //  Created by lbxia on 15/12/8.
 //  Copyright © 2015年 xialibing. All rights reserved.
@@ -14,7 +14,9 @@ public protocol LBXResultDelegate : NSObjectProtocol {
     func LBXResultHandle(result:LBXScanResult)
 }
 
+
 open class LBXScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     
    open var scanObj: LBXScanWrapper?
     
@@ -24,7 +26,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     
    open var resultClass : AnyClass?
     
-    public var resultDelegate : LBXResultDelegate?
+   public var resultDelegate : LBXResultDelegate?
 
     
     //启动区域识别功能
@@ -73,8 +75,9 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     {
         if(!LBXPermissions .isGetCameraPermission())
         {
-            showMsg(title: "提示", message: "没有相机权限，请到设置->隐私中开启本程序相机权限")
-            return;
+            showMsg(title: nil, message: NSLocalizedString("Please allow to access your album in \"Setting\"->\"Privacy\"->\"Photos\".", comment: "Photos access"))
+            //Please allow to access your album in "Setting"->"Privacy"->"Photos".
+            return
         }
         
         if (scanObj == nil)
@@ -123,16 +126,18 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
             qRScanView = LBXScanView(frame: self.view.frame,vstyle:scanStyle! )
             self.view.addSubview(qRScanView!)
         }
-        qRScanView?.deviceStartReadying(readyStr: "相机启动中...")
+        qRScanView?.deviceStartReadying(readyStr: NSLocalizedString("Loading...", comment: "Loading..."))
         
     }
    
     
     /**
-     处理扫码结果，如果是继承本控制器的，可以重写该方法,作出相应地处理
+     处理扫码结果，如果是继承本控制器的，可以重写该方法,作出相应地处理，或者设置delegate作出相应处理
      */
     open func handleCodeResult(arrayResult:[LBXScanResult])
     {
+        
+        
         for result:LBXScanResult in arrayResult
         {
             print("%@",result.strScanned!)
@@ -140,8 +145,8 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         
         let result:LBXScanResult = arrayResult[0]
         
-       resultDelegate?.LBXResultHandle(result: result)
-    
+        resultDelegate?.LBXResultHandle(result: result)
+
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
@@ -157,7 +162,9 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     {
         if(!LBXPermissions.isGetPhotoPermission())
         {
-            showMsg(title: "提示", message: "没有相册权限，请到设置->隐私中开启本程序相册权限")
+            showMsg(title: nil, message: NSLocalizedString("Please allow to access your device's camera in \"Setting\"->\"Privacy\"->\"Camera\".", comment: "Camera access"))
+            //Please allow to access your device's camera in "Setting"->"Privacy"->"Camera".
+            return
         }
         
         let picker = UIImagePickerController()
@@ -170,8 +177,10 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         
         present(picker, animated: true, completion: nil)
     }
+    
     //MARK: -----相册选择图片识别二维码 （条形码没有找到系统方法）
-    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
         picker.dismiss(animated: true, completion: nil)
         
         var image:UIImage? = info[UIImagePickerControllerEditedImage] as? UIImage
@@ -190,10 +199,10 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
                 return
             }
         }
-        
-        showMsg(title: "", message: "识别失败")
+      
+        showMsg(title: nil, message: NSLocalizedString("Identify failed", comment: "Identify failed"))
     }
-        
+    
     func showMsg(title:String?,message:String?)
     {
         if LBXScanWrapper.isSysIos8Later()
@@ -201,13 +210,13 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         
             //if #available(iOS 8.0, *)
             
-            let alertController = UIAlertController(title: title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-            let alertAction = UIAlertAction(title:  "知道了", style: UIAlertActionStyle.default) { [weak self] (alertAction) in
+            let alertController = UIAlertController(title: nil, message:message, preferredStyle: UIAlertControllerStyle.alert)
+            let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.default) { (alertAction) in
                 
-                if let strongSelf = self
-                {
-                    strongSelf.startScan()
-                }
+//                if let strongSelf = self
+//                {
+//                    strongSelf.startScan()
+//                }
             }
             
             alertController.addAction(alertAction)
@@ -216,7 +225,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     }
     deinit
     {
-        print("LBXScanViewController deinit")
+//        print("LBXScanViewController deinit")
     }
     
 }
