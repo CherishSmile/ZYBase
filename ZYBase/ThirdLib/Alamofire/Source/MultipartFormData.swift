@@ -92,7 +92,11 @@ open class MultipartFormData {
     // MARK: - Properties
 
     /// The `Content-Type` header value containing the boundary used to generate the `multipart/form-data`.
+<<<<<<< 92d38137912408d5bc7d792febc79634724ddc2c
     open var contentType: String { return "multipart/form-data; boundary=\(boundary)" }
+=======
+    open lazy var contentType: String = "multipart/form-data; boundary=\(self.boundary)"
+>>>>>>> 修改bug
 
     /// The content length of all body parts used to generate the `multipart/form-data` not including the boundaries.
     public var contentLength: UInt64 { return bodyParts.reduce(0) { $0 + $1.bodyContentLength } }
