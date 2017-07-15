@@ -73,6 +73,11 @@
 		0489FF151EBD54EB00931E88 /* BaseSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489FF141EBD54EB00931E88 /* BaseSearchVC.swift */; };
 		0489FF2A1EBDCC0400931E88 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 0489FF281EBDCC0400931E88 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0489FF2B1EBDCC0400931E88 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489FF291EBDCC0400931E88 /* MBProgressHUD.m */; };
+		049CC25D1F19C8A00050C126 /* UIScrollView+EmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 049CC25B1F19C8A00050C126 /* UIScrollView+EmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		049CC25E1F19C8A00050C126 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 049CC25C1F19C8A00050C126 /* UIScrollView+EmptyDataSet.m */; };
+		049CC2621F19FCE70050C126 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 049CC2601F19FCE70050C126 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		049CC2631F19FCE70050C126 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 049CC2611F19FCE70050C126 /* Reachability.m */; };
+		049CC2671F19FF230050C126 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049CC2661F19FF230050C126 /* SystemConfiguration.framework */; };
 		350D47E21E652997001B0C77 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D47E11E652997001B0C77 /* WebVC.swift */; };
 		350D47EA1E657F80001B0C77 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 350D47E91E657F80001B0C77 /* index.html */; };
 		356F35651E6949650068D121 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 356F35641E6949650068D121 /* CodeScan.bundle */; };
@@ -282,6 +287,11 @@
 		0489FF141EBD54EB00931E88 /* BaseSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchVC.swift; sourceTree = "<group>"; };
 		0489FF281EBDCC0400931E88 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		0489FF291EBDCC0400931E88 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		049CC25B1F19C8A00050C126 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		049CC25C1F19C8A00050C126 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		049CC2601F19FCE70050C126 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		049CC2611F19FCE70050C126 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		049CC2661F19FF230050C126 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		350D47E11E652997001B0C77 /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		350D47E91E657F80001B0C77 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		356F35641E6949650068D121 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
@@ -361,6 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049CC2671F19FF230050C126 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +542,7 @@
 		047E4A6D1EC041BC000B9356 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				049CC25A1F19C8700050C126 /* DNZEmptyDataSet */,
 				047E4A821EC04A97000B9356 /* NSObject */,
 				047E4A831EC04ABB000B9356 /* UINavigationController */,
 				047E4A841EC04AEA000B9356 /* UISearchBar */,
@@ -593,12 +605,39 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		049CC25A1F19C8700050C126 /* DNZEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				049CC25B1F19C8A00050C126 /* UIScrollView+EmptyDataSet.h */,
+				049CC25C1F19C8A00050C126 /* UIScrollView+EmptyDataSet.m */,
+			);
+			name = DNZEmptyDataSet;
+			sourceTree = "<group>";
+		};
+		049CC25F1F19FCD60050C126 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				049CC2601F19FCE70050C126 /* Reachability.h */,
+				049CC2611F19FCE70050C126 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		049CC2651F19FF230050C126 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				049CC2661F19FF230050C126 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		357553171E4817C5005A0755 = {
 			isa = PBXGroup;
 			children = (
 				357553231E4817C5005A0755 /* ZYBase */,
 				357554301E4818B7005A0755 /* ZYBaseDemo */,
 				357553221E4817C5005A0755 /* Products */,
+				049CC2651F19FF230050C126 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -640,6 +679,7 @@
 		357553321E481803005A0755 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				049CC25F1F19FCD60050C126 /* Reachability */,
 				046EE1DB1EC449990045976F /* HMSegmentedControl */,
 				0489FF271EBDCBF200931E88 /* MBProgressHUD */,
 				042E11591EBC568700CB5944 /* MJRefresh */,
@@ -992,6 +1032,8 @@
 				0489FF2A1EBDCC0400931E88 /* MBProgressHUD.h in Headers */,
 				046EE1DE1EC449990045976F /* HMSegmentedControl.h in Headers */,
 				0446B3491ED6CBBB00515043 /* ZYChineseSort.h in Headers */,
+				049CC25D1F19C8A00050C126 /* UIScrollView+EmptyDataSet.h in Headers */,
+				049CC2621F19FCE70050C126 /* Reachability.h in Headers */,
 				357554101E481804005A0755 /* TTTAttributedLabel.h in Headers */,
 				3575541A1E481804005A0755 /* ZYAlertWindow.h in Headers */,
 				357554141E481804005A0755 /* UIWindow+ZYUitily.h in Headers */,
@@ -1184,7 +1226,9 @@
 				042E11971EBC570E00CB5944 /* MJRefreshAutoNormalFooter.m in Sources */,
 				042E11AB1EBC570E00CB5944 /* NSBundle+MJRefresh.m in Sources */,
 				047E4A8C1EC051F9000B9356 /* UIView+CustomeAlert.swift in Sources */,
+				049CC2631F19FCE70050C126 /* Reachability.m in Sources */,
 				357553B71E481804005A0755 /* BaseSetting.swift in Sources */,
+				049CC25E1F19C8A00050C126 /* UIScrollView+EmptyDataSet.m in Sources */,
 				357553B81E481804005A0755 /* BaseUI.swift in Sources */,
 				0489FF2B1EBDCC0400931E88 /* MBProgressHUD.m in Sources */,
 				047E4A791EC04A53000B9356 /* UINavigationController+SGProgress.m in Sources */,

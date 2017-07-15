@@ -30,7 +30,7 @@ class UnitModel: ZYDataModel {
 }
 
 
-class AorKDemoVC: BaseTabVC , UITableViewDelegate , UITableViewDataSource,UIScrollViewDelegate{
+class AorKDemoVC: BaseTabVC , UITableViewDelegate , UITableViewDataSource,UIScrollViewDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate{
 
     var dataArr:Array<UnitModel> = []
     
@@ -40,6 +40,8 @@ class AorKDemoVC: BaseTabVC , UITableViewDelegate , UITableViewDataSource,UIScro
         tab.backgroundColor = .clear
         tab.delegate = self
         tab.dataSource = self
+        tab.emptyDataSetSource = self
+        tab.emptyDataSetDelegate = self
         return tab
     }()
     override func viewDidLoad() {
@@ -106,21 +108,44 @@ class AorKDemoVC: BaseTabVC , UITableViewDelegate , UITableViewDataSource,UIScro
         }
 
     }
+    
+    
+    //MARK: DZNEmptyDataSetDelegate
+    
+    /**
+     *  返回标题文字
+     */
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let title = "暂无数据"
+        return NSAttributedString(string: title, attributes: [NSFontAttributeName:getFont(16)])
+    }
+    /**
+     *  返回详情文字
+     */
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let description = "请稍后重试"
+        return NSAttributedString(string: description, attributes: [NSFontAttributeName:getFont(14)])
+    }
+    /**
+     *  返回图片
+     */
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return nil
+    }
+    //MARK: DZNEmptyDataSetSource
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    func emptyDataSet(_ scrollView: UIScrollView, didTap view: UIView) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
